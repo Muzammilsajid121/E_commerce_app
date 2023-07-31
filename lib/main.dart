@@ -1,0 +1,57 @@
+import 'package:e_commerce_app/screens/visual_search.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'order_details.dart';
+import 'screens/my_orders.dart';
+
+//import 'screens/finding.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Investment App',
+      theme: ThemeData(
+        // colorSchemeSeed: Colors.black,
+        //TEXT THEMES
+        //
+        textTheme: TextTheme(
+            //Body Small
+            bodySmall:
+                GoogleFonts.metrophobic(fontSize: 14, color: Color(0xffABB4BD)),
+            //Body Medium
+            bodyMedium: GoogleFonts.dmSans(
+                fontSize: 16, color: Colors.white, fontWeight: FontWeight.w700),
+            //
+            //Body Large
+            bodyLarge: GoogleFonts.dmSans(fontSize: 18, color: Colors.white),
+            //title Medium
+            titleMedium: GoogleFonts.dmSans(
+                fontSize: 24, color: Colors.white, fontWeight: FontWeight.w700),
+            //title Large
+            titleLarge: GoogleFonts.metrophobic(
+                fontSize: 34,
+                fontWeight: FontWeight.w700,
+                color: Colors.white)),
+
+        //APPBAR THEME
+        appBarTheme: AppBarTheme(
+          color: Colors.transparent,
+          elevation: 0,
+        ),
+        //
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: OrderDetails(),
+    );
+  }
+}
