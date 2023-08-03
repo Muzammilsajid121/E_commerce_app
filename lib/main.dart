@@ -2,8 +2,9 @@ import 'package:e_commerce_app/screens/visual_search.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'order_details.dart';
+import 'screens/order_details.dart';
 import 'screens/my_orders.dart';
+import 'screens/setting.dart';
 
 //import 'screens/finding.dart';
 

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:e_commerce_app/screens/finding.dart';
 
 class VisualSearch extends StatefulWidget {
   const VisualSearch({super.key});
@@ -11,9 +12,8 @@ class VisualSearch extends StatefulWidget {
 }
 
 class _VisualSearchState extends State<VisualSearch> {
-  //Functionality For Image Picker
-
   File? _image;
+
   Future getImage(ImageSource) async {
     final image = await ImagePicker().pickImage(source: ImageSource);
 
@@ -42,17 +42,7 @@ class _VisualSearchState extends State<VisualSearch> {
         //
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           //
-          _image != null
-              ? Image.file(
-                  _image!,
-                  width: 120,
-                  height: 100,
-                )
-              : Image.asset(
-                  "assets/shoe.png",
-                  width: 120,
-                  height: 120,
-                ),
+
           //
           //
           //Text
@@ -99,6 +89,8 @@ class _VisualSearchState extends State<VisualSearch> {
                   backgroundColor: Colors.transparent,
                   side: BorderSide(color: Colors.white, width: 2)),
               onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => FindindScreen()));
                 getImage(ImageSource.gallery);
               },
               child: Text(

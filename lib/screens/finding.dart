@@ -1,45 +1,76 @@
-// import 'package:flutter/material.dart';
-// import 'package:e_commerce_app/screens/visual_search.dart';
+import 'package:flutter/material.dart';
+import 'package:e_commerce_app/screens/visual_search.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
-// class FindindScreen extends StatelessWidget {
-//   const FindindScreen({super.key});
+class FindindScreen extends StatefulWidget {
+  FindindScreen({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Color(0xff1E1F28),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             _image != null
-//                 ? Image.file(
-//                     _image!,
-//                     width: 100,
-//                   )
-//                 : Image.asset("assets/shoe.png"),
-//             SizedBox(
-//               height: 15,
-//             ),
+  @override
+  State<FindindScreen> createState() => _FindindScreenState();
+}
 
-//             //Icon
-//             const Icon(
-//               Icons.search,
-//               size: 50,
-//               color: Colors.red,
-//             ),
+class _FindindScreenState extends State<FindindScreen> {
+  @override
 
-//             SizedBox(
-//               height: 10,
-//             ),
-//             //
-//             Text(
-//               "Finding Similar \n       results ...",
-//               style: Theme.of(context).textTheme.titleMedium,
-//             )
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+  //Functionality For Image Picker
+
+  File? _image;
+
+  Future getImage(ImageSource) async {
+    final image = await ImagePicker().pickImage(source: ImageSource);
+
+    if (image == null) return;
+    final imageTemporary = File(image.path);
+
+    //
+    setState(() {
+      this._image = imageTemporary;
+    });
+  }
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xff1E1F28),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _image != null
+                ? Image.file(
+                    _image!,
+                    width: 120,
+                    height: 100,
+                  )
+                : Image.asset(
+                    "assets/finding.png",
+                    width: 230,
+                    height: 230,
+                  ),
+
+            //
+            SizedBox(
+              height: 15,
+            ),
+
+            //Icon
+            const Icon(
+              Icons.search,
+              size: 50,
+              color: Colors.red,
+            ),
+
+            SizedBox(
+              height: 10,
+            ),
+            //
+            Text(
+              "Finding Similar \n       results ...",
+              style: Theme.of(context).textTheme.titleMedium,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
