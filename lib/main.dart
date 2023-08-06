@@ -2,6 +2,9 @@ import 'package:e_commerce_app/screens/visual_search.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'screens/catalog1.dart';
+import 'screens/main_page.dart';
+import 'screens/main_page2.dart';
 import 'screens/order_details.dart';
 import 'screens/my_orders.dart';
 import 'screens/setting.dart';
@@ -21,6 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Investment App',
       theme: ThemeData(
+        fontFamily: 'Metropopolis',
         // colorSchemeSeed: Colors.black,
         //TEXT THEMES
         //
@@ -52,7 +56,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: OrderDetails(),
+      home: MainPage2(),
     );
   }
 }
