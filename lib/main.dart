@@ -1,8 +1,10 @@
 import 'package:e_commerce_app/screens/visual_search.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'screens/catalog1.dart';
+import 'screens/maddy/splash_screen.dart';
 import 'screens/main_page.dart';
 import 'screens/main_page2.dart';
 import 'screens/order_details.dart';
@@ -14,6 +16,12 @@ import 'screens/setting.dart';
 void main() {
   runApp(const MyApp());
 }
+
+//SharedPrefences
+SharedPreferences? localStorage;
+final userNamecontroller = TextEditingController();
+final emailcontroller = TextEditingController();
+//
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -56,7 +64,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MainPage2(),
+      home: SplashScreen(),
     );
   }
 }
