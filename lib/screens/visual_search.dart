@@ -69,7 +69,7 @@ class _VisualSearchState extends State<VisualSearch> {
             width: 440,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.transparent,
+                backgroundColor: Colors.red,
                 side: BorderSide(color: Colors.white, width: 2),
               ),
               onPressed: () async {

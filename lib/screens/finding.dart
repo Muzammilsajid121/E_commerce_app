@@ -3,6 +3,8 @@ import 'package:e_commerce_app/screens/visual_search.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
+import 'main_page.dart';
+
 // class FindindScreen extends StatefulWidget {
 //   FindindScreen({super.key});
 
@@ -89,6 +91,18 @@ class FindingScreen extends StatefulWidget {
 }
 
 class _FindingScreenState extends State<FindingScreen> {
+//To automatically switch to Main Screen After 2 seconds
+  void SwitchToMainPage() {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => MainPage()));
+  }
+
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 2), SwitchToMainPage);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

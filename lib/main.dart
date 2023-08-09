@@ -1,3 +1,5 @@
+import 'package:e_commerce_app/screens/maddy/login2.dart';
+import 'package:e_commerce_app/screens/sgn.dart';
 import 'package:e_commerce_app/screens/visual_search.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -64,7 +66,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: SignUP(),
     );
   }
 }

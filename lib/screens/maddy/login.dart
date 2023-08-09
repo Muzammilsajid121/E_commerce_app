@@ -1,7 +1,10 @@
-import 'package:e_commerce_app/screens/maddy/forgot_password.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+import '../visual_search.dart';
+import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -13,6 +16,46 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final emailcontroller = TextEditingController();
   final Passwordcontroller = TextEditingController();
+
+  void login(String email, String password) async {
+    try {
+      http.Response response = await put(
+          Uri.parse('https://ecommerce.salmanbediya.com/users/login'),
+          body: {'email': email, 'password': password});
+      if (response.statusCode == 200) {
+        Fluttertoast.showToast(
+            msg: "User created successfully",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 4,
+            backgroundColor: Colors.green,
+            textColor: Colors.black,
+            fontSize: 16.0);
+        print("Successfully Login");
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (BuildContext context) {
+              return VisualSearch();
+            },
+          ),
+        );
+      } else {
+        Fluttertoast.showToast(
+            msg: "Failed",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 10,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
+        print("Failed");
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   String? email;
   String? password;
   @override
@@ -137,18 +180,9 @@ class _LoginScreenState extends State<LoginScreen> {
               //wrap elevated button with sizedBox widget
               child: ElevatedButton(
                 onPressed: () {
-                  setState(() {
-                    email = emailcontroller.text;
-                    password = Passwordcontroller.text;
-                  });
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) {
-                        return Forgot_Screen();
-                      },
-                    ),
-                  );
+                  login(emailcontroller.text.toString(),
+                      Passwordcontroller.text.toString());
+                  setState(() {});
                 },
                 // style: ElevatedButton.styleFrom(shadowColor: Colors.green),
                 child: Text(
@@ -190,7 +224,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(80),
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
-                      child: Image.asset('assets/images/gl.png'),
+                      child: Image.asset('assets/gl.png'),
                     ),
                   ),
                   width: 80,
@@ -210,7 +244,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(80),
                   child: Padding(
                     padding: const EdgeInsets.all(14.0),
-                    child: Image.asset('assets/images/fl.png'),
+                    child: Image.asset('assets/fl.png'),
                   ),
                 ),
                 decoration: BoxDecoration(

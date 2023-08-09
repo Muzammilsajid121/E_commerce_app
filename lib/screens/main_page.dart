@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'main_page2.dart';
+
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
@@ -40,7 +42,16 @@ class MainPage extends StatelessWidget {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xffEF3651)),
-                    onPressed: () {},
+                    ////To switch to Main_page2 Screen
+
+                    onPressed: () {
+                      void SwitchToMainPage2() {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MainPage2()));
+                      }
+                    },
                     child: Text(
                       "check",
                       style: TextStyle(color: Colors.white),
