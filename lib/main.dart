@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/maddy/forgot_password.dart';
 import 'package:e_commerce_app/screens/maddy/login2.dart';
 import 'package:e_commerce_app/screens/sgn.dart';
 import 'package:e_commerce_app/screens/visual_search.dart';
@@ -6,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'screens/catalog1.dart';
+import 'screens/maddy/forgot_pass.dart';
 import 'screens/maddy/splash_screen.dart';
 import 'screens/main_page.dart';
 import 'screens/main_page2.dart';
@@ -66,7 +68,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SignUP(),
+      home: const ForgotPass(),
     );
   }
 }

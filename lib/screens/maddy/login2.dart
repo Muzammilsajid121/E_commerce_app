@@ -165,12 +165,18 @@ class _LoginScreenState extends State<LoginScreenn> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const Text(
-                        'Forgot Your Password?',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontFamily: "Metropolis"),
+                      InkWell(
+                        onTap: () => Navigator.push(context,
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return LoginScreenn();
+                        })),
+                        child: const Text(
+                          'Forgot Your Password?',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontFamily: "Metropolis"),
+                        ),
                       ),
                       Image.asset('assets/r.png'),
                     ],

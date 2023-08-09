@@ -4,6 +4,9 @@ import 'package:http/http.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:e_commerce_app/screens/maddy/login.dart';
 
+import 'maddy/forgot_password.dart';
+import 'maddy/login2.dart';
+
 class SignUP extends StatefulWidget {
   const SignUP({super.key});
 
@@ -36,7 +39,7 @@ class _SignUPState extends State<SignUP> {
           context,
           MaterialPageRoute(
             builder: (BuildContext context) {
-              return LoginScreen();
+              return LoginScreenn();
             },
           ),
         );
@@ -188,12 +191,18 @@ class _SignUPState extends State<SignUP> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const Text(
-                        'Already have an account?',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontFamily: "Metropolis"),
+                      InkWell(
+                        onTap: () => Navigator.push(context,
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return Forgot_Screen();
+                        })),
+                        child: const Text(
+                          'Already have an account?',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontFamily: "Metropolis"),
+                        ),
                       ),
                       Image.asset('assets/r.png'),
                     ],

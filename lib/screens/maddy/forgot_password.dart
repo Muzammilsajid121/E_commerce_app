@@ -42,7 +42,7 @@ class _Forgot_ScreenState extends State<Forgot_Screen> {
             ),
           ),
           SizedBox(
-            height: 100,
+            height: 20,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 30.0),
