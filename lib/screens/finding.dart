@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:e_commerce_app/screens/visual_search.dart';
-import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 import 'main_page.dart';

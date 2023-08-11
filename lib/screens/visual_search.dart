@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:e_commerce_app/screens/finding.dart';
-import 'dart:io';
+// import 'dart:io';
 
 class VisualSearch extends StatefulWidget {
   const VisualSearch({super.key});

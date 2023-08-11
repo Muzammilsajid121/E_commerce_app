@@ -1,9 +1,7 @@
-import 'package:e_commerce_app/screens/maddy/forgot_password.dart';
-import 'package:e_commerce_app/screens/maddy/login.dart';
+// import 'package:e_commerce_app/screens/maddy/forgot_password.dart';
+import 'package:e_commerce_app/screens/maddy/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_app/screens/maddy/sign_up.dart';
-
-import '../sgn.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
