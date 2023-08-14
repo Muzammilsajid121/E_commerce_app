@@ -151,46 +151,48 @@ class MyOrders extends StatelessWidget {
       ),
       body: Container(
         width: double.infinity,
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 300.0),
-              child: Text(
-                "My orders",
-                style: Theme.of(context).textTheme.headline6,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 300.0),
+                child: Text(
+                  "My orders",
+                  style: Theme.of(context).textTheme.headline6,
+                ),
               ),
-            ),
 
-            // First Order Card
-            OrderCard(
-              orderNo: "1947034",
-              orderDate: "05-12-2019",
-              trackingNumber: "IW3475453455",
-              quantity: "3",
-              totalAmount: "1125\$",
-              deliveryStatus: "Delivered",
-            ),
+              // First Order Card
+              OrderCard(
+                orderNo: "1947034",
+                orderDate: "05-12-2019",
+                trackingNumber: "IW3475453455",
+                quantity: "3",
+                totalAmount: "1125\$",
+                deliveryStatus: "Delivered",
+              ),
 
-            // Second Order Card
-            OrderCard(
-              orderNo: "1947035",
-              orderDate: "06-12-2019",
-              trackingNumber: "IW3475453456",
-              quantity: "2",
-              totalAmount: "800\$",
-              deliveryStatus: "In Transit",
-            ),
+              // Second Order Card
+              OrderCard(
+                orderNo: "1947035",
+                orderDate: "06-12-2019",
+                trackingNumber: "IW3475453456",
+                quantity: "2",
+                totalAmount: "800\$",
+                deliveryStatus: "In Transit",
+              ),
 
-            // Thire Order Card
-            OrderCard(
-              orderNo: "2398492",
-              orderDate: "06-12-2021",
-              trackingNumber: "IW3475453456",
-              quantity: "3",
-              totalAmount: "400\$",
-              deliveryStatus: "In Transit",
-            ),
-          ],
+              // Thire Order Card
+              OrderCard(
+                orderNo: "2398492",
+                orderDate: "06-12-2021",
+                trackingNumber: "IW3475453456",
+                quantity: "3",
+                totalAmount: "400\$",
+                deliveryStatus: "In Transit",
+              ),
+            ],
+          ),
         ),
       ),
     );

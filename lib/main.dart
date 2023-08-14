@@ -6,14 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'screens/bottom_nav-bar.dart';
 import 'screens/catalog1.dart';
 // import 'screens/maddy/forgot_pass.dart';
+import 'screens/checkout.dart';
 import 'screens/favourities.dart';
 import 'screens/maddy/splash_screen.dart';
 import 'screens/main_page.dart';
 import 'screens/main_page2.dart';
 import 'screens/rating.dart';
 import 'screens/stars_rating.dart';
+import 'screens/success.dart';
 // import 'screens/order_details.dart';
 // import 'screens/my_orders.dart';
 // import 'screens/setting.dart';
@@ -71,7 +74,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Rating(),
+      home: MainPage2(),
     );
   }
 }
