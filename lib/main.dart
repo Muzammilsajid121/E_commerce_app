@@ -12,6 +12,7 @@ import 'screens/favourities.dart';
 import 'screens/maddy/splash_screen.dart';
 import 'screens/main_page.dart';
 import 'screens/main_page2.dart';
+import 'screens/rating.dart';
 import 'screens/stars_rating.dart';
 // import 'screens/order_details.dart';
 // import 'screens/my_orders.dart';
@@ -70,7 +71,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SignUP(),
+      home: Rating(),
     );
   }
 }
