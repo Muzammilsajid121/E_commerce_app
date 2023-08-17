@@ -143,19 +143,29 @@ class OrderCard extends StatelessWidget {
                 color: Color(0xff2A2C36),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Pullover",
-                      style: Theme.of(context).textTheme.bodyMedium,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Pullover",
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                        Icon(
+                          Icons.more_vert,
+                          color: Colors.white,
+                        )
+                      ],
                     ),
-                    SizedBox(height: 5),
-                    Text(
-                      "Mango",
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
+
+                    // SizedBox(height: 5),
+                    // Text(
+                    //   "Mango",
+                    //   style: Theme.of(context).textTheme.bodySmall,
+                    // ),
                     SizedBox(height: 8),
                     Row(
                       children: [
@@ -184,18 +194,28 @@ class OrderCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 8),
+                    SizedBox(height: 14),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
                           children: [
                             Text(
-                              "Units:",
-                              style: Theme.of(context).textTheme.bodySmall,
+                              "-",
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                            const SizedBox(
+                              width: 20,
                             ),
                             Text(
                               "1",
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Text(
+                              "+",
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
                           ],

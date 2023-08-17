@@ -1,116 +1,245 @@
 import 'package:flutter/material.dart';
 
+// class CatalogCard extends StatelessWidget {
+//   final String imageAssetPath;
+//   const CatalogCard({required this.imageAssetPath, Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.all(8.0),
+//       child: Row(
+//         children: [
+//           Image.asset(imageAssetPath),
+
+//           //2nd
+//           Container(
+//             width: 340,
+//             decoration: const BoxDecoration(
+//               //to radius specific side of container
+//               borderRadius: BorderRadius.only(
+//                   bottomRight: Radius.circular(12),
+//                   topRight: Radius.circular(12)),
+//               color: Color(0xff2A2C36),
+//             ),
+//             child: Column(
+//               children: [
+//                 Padding(
+//                   padding: const EdgeInsets.only(right: 265),
+//                   child: Text(
+//                     "Pullover",
+//                     style: Theme.of(context).textTheme.bodyMedium,
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 5,
+//                 ),
+//                 Padding(
+//                   padding: const EdgeInsets.only(right: 281),
+//                   child: Text(
+//                     "Mango",
+//                     style: Theme.of(context).textTheme.bodySmall,
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 8,
+//                 ),
+//                 Padding(
+//                   padding: const EdgeInsets.symmetric(horizontal: 8),
+//                   child: Row(
+//                     children: [
+//                       Text(
+//                         "Color:",
+//                         style: Theme.of(context).textTheme.bodySmall,
+//                       ),
+//                       Text(
+//                         "Gray",
+//                         style: Theme.of(context)
+//                             .textTheme
+//                             .bodySmall
+//                             ?.copyWith(color: Colors.white),
+//                       ),
+//                       SizedBox(
+//                         width: 20,
+//                       ),
+//                       Text(
+//                         "Size:",
+//                         style: Theme.of(context).textTheme.bodySmall,
+//                       ),
+//                       Text(
+//                         "L",
+//                         style: Theme.of(context)
+//                             .textTheme
+//                             .bodySmall
+//                             ?.copyWith(color: Colors.white),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   height: 8,
+//                 ),
+//                 Padding(
+//                   padding: const EdgeInsets.symmetric(horizontal: 10),
+//                   child: Row(
+//                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                     children: [
+//                       Row(
+//                         children: [
+//                           Text(
+//                             "Units:",
+//                             style: Theme.of(context).textTheme.bodySmall,
+//                           ),
+//                           Text(
+//                             "1",
+//                             style: Theme.of(context).textTheme.bodyMedium,
+//                           ),
+//                         ],
+//                       ),
+//                       //
+//                       Row(
+//                         children: [
+//                           Text(
+//                             "51\$",
+//                             style: Theme.of(context).textTheme.bodyMedium,
+//                           ),
+//                         ],
+//                       ),
+//                     ],
+//                   ),
+//                 )
+//               ],
+//             ),
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }
+///////////////////////////////////////////////
+///
 class CatalogCard extends StatelessWidget {
   final String imageAssetPath;
   const CatalogCard({required this.imageAssetPath, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(2.0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(imageAssetPath),
 
           //2nd
-          Container(
-            width: 340,
-            decoration: const BoxDecoration(
-              //to radius specific side of container
-              borderRadius: BorderRadius.only(
+          Center(
+            child: Container(
+              width: screenWidth < 600 ? screenWidth - 135 : 200,
+              height: 105,
+              decoration: const BoxDecoration(
+                //to radius specific side of container
+                borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(12),
-                  topRight: Radius.circular(12)),
-              color: Color(0xff2A2C36),
+                  topRight: Radius.circular(12),
+                ),
+                color: Color(0xff2A2C36),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Pullover",
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                        Icon(
+                          Icons.more_vert,
+                          color: Colors.white,
+                        )
+                      ],
+                    ),
+
+                    // SizedBox(height: 5),
+                    // Text(
+                    //   "Mango",
+                    //   style: Theme.of(context).textTheme.bodySmall,
+                    // ),
+                    SizedBox(height: 8),
+                    Row(
+                      children: [
+                        Text(
+                          "Color:",
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                        Text(
+                          "Gray",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall
+                              ?.copyWith(color: Colors.white),
+                        ),
+                        SizedBox(width: 20),
+                        Text(
+                          "Size:",
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                        Text(
+                          "L",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall
+                              ?.copyWith(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 14),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "-",
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Text(
+                              "1",
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Text(
+                              "+",
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                          ],
+                        ),
+                        //
+                        Row(
+                          children: [
+                            Text(
+                              "51\$",
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 265),
-                  child: Text(
-                    "Pullover",
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 281),
-                  child: Text(
-                    "Mango",
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Row(
-                    children: [
-                      Text(
-                        "Color:",
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
-                      Text(
-                        "Gray",
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodySmall
-                            ?.copyWith(color: Colors.white),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        "Size:",
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
-                      Text(
-                        "L",
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodySmall
-                            ?.copyWith(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Units:",
-                            style: Theme.of(context).textTheme.bodySmall,
-                          ),
-                          Text(
-                            "1",
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                        ],
-                      ),
-                      //
-                      Row(
-                        children: [
-                          Text(
-                            "51\$",
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          )
+          ),
         ],
       ),
     );
@@ -139,8 +268,96 @@ class CatalogOne extends StatelessWidget {
                 Text("Women's Top",
                     style: Theme.of(context).textTheme.titleLarge),
 
+                const SizedBox(
+                  height: 12,
+                ),
+
                 // Tabs
-                //Tabs
+                // //Tabs
+                // Tabs
+                DefaultTabController(
+                  length: 5,
+                  child: Column(
+                    children: [
+                      TabBar(
+                        indicator: null,
+                        automaticIndicatorColorAdjustment: false,
+                        indicatorWeight: 0.1,
+                        isScrollable: true, // Enable scrolling for tabs
+                        labelColor: Colors.red, // Set selected tab text color
+                        unselectedLabelColor:
+                            Colors.black, // Set unselected tab text color
+                        tabs: [
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16)),
+                            width: 100,
+                            height: 25,
+                            alignment: Alignment.center,
+                            child: Text('t-shirts'),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16)),
+                            width: 100,
+                            height: 25,
+                            alignment: Alignment.center,
+                            child: Text('tops'),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16)),
+                            width: 100,
+                            height: 25,
+                            alignment: Alignment.center,
+                            child: Text('sleeveless'),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16)),
+                            width: 100,
+                            height: 25,
+                            alignment: Alignment.center,
+                            child: Text('blouses'),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(16)),
+                            width: 100,
+                            height: 25,
+                            alignment: Alignment.center,
+                            child: Text('prexy'),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 8),
+                    ],
+                  ),
+                ),
+
+                //
+                //Row
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      const Icon(
+                        Icons.swap_vert,
+                        color: Colors.white,
+                      ),
+                      Text(
+                        "Price: lowest to high",
+                        style: Theme.of(context).textTheme.bodySmall,
+                      )
+                    ],
+                  ),
+                ),
 
                 Expanded(
                   child: ListView(
