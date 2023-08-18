@@ -1,6 +1,9 @@
+import 'package:e_commerce_app/main_page2_model.dart';
+import 'package:e_commerce_app/screens/categories_2.dart';
 import 'package:e_commerce_app/screens/favourities.dart';
 import 'package:e_commerce_app/screens/maddy/my_profile.dart';
 import 'package:e_commerce_app/screens/main_page.dart';
+import 'package:e_commerce_app/screens/my_bag.dart';
 import 'package:e_commerce_app/screens/my_orders.dart';
 import 'package:e_commerce_app/screens/setting.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +20,9 @@ class _NavigationState extends State<Navigation> {
   //
   final List<Widget> _pages = [
     const MainPage(), // Replace with your own content widgets
+    const Category2(),
+    const MyBag(),
     const Favourite(),
-    MyOrders(),
-    const Settings(),
     const Profile(),
   ];
 

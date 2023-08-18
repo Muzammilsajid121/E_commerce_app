@@ -24,40 +24,40 @@ class _ProfileState extends State<Profile> {
           child: Icon(Icons.search, color: Colors.white),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color.fromARGB(255, 0, 10, 20),
-        currentIndex: currentSelectedIndex,
-        unselectedItemColor: Colors.white,
-        fixedColor: Colors.white,
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/hm.png'),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/sp.png'),
-            label: "Shop",
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/bg.png'),
-            label: "Bag",
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/ht.png'),
-            label: "Favorites",
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/ac.png'),
-            label: "Profile",
-          ),
-        ],
-        onTap: ((index) {
-          setState(() {
-            currentSelectedIndex = index;
-          });
-        }),
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   backgroundColor: Color.fromARGB(255, 0, 10, 20),
+      //   currentIndex: currentSelectedIndex,
+      //   unselectedItemColor: Colors.white,
+      //   fixedColor: Colors.white,
+      //   type: BottomNavigationBarType.fixed,
+      //   items: [
+      //     BottomNavigationBarItem(
+      //       icon: Image.asset('assets/images/hm.png'),
+      //       label: "Home",
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Image.asset('assets/images/sp.png'),
+      //       label: "Shop",
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Image.asset('assets/images/bg.png'),
+      //       label: "Bag",
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Image.asset('assets/images/ht.png'),
+      //       label: "Favorites",
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Image.asset('assets/images/ac.png'),
+      //       label: "Profile",
+      //     ),
+      //   ],
+      //   onTap: ((index) {
+      //     setState(() {
+      //       currentSelectedIndex = index;
+      //     });
+      //   }),
+      // ),
       body: Center(
         child: Column(
           children: [
@@ -84,7 +84,7 @@ class _ProfileState extends State<Profile> {
                   padding: const EdgeInsets.only(left: 16.0),
                   child: Container(
                     height: 65,
-                    child: Image.asset('assets/images/pro.png'),
+                    child: Image.asset('assets/pro.png'),
                   ),
                 ),
                 Padding(

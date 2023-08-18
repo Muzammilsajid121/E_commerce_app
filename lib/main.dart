@@ -15,6 +15,7 @@ import 'screens/maddy/splash_screen.dart';
 import 'screens/main_page.dart';
 import 'screens/main_page2.dart';
 import 'screens/my_bag.dart';
+import 'screens/producr_card.dart';
 import 'screens/rating.dart';
 import 'screens/stars_rating.dart';
 import 'screens/success.dart';
@@ -75,7 +76,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Navigation(),
+      home: Product(),
     );
   }
 }
