@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/checkout.dart';
 import 'package:flutter/material.dart';
 
 // class OrderCard extends StatelessWidget {
@@ -354,7 +355,17 @@ class MyBag extends StatelessWidget {
                         backgroundColor: Colors.red,
                         side: BorderSide(color: Colors.white, width: 1),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        // setState(() {});
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return CheckOut();
+                            },
+                          ),
+                        );
+                      },
 
                       //chi;d of elevated
                       child: Text(

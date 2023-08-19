@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:e_commerce_app/screens/catalog1.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -111,14 +112,14 @@ class _Category2State extends State<Category2> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {});
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (BuildContext context) {
-                      //       return Home();
-                      //     },
-                      //   ),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return CatalogOne();
+                          },
+                        ),
+                      );
                     },
                     // style: ElevatedButton.styleFrom(shadowColor: Colors.green),
                     child: Text(
