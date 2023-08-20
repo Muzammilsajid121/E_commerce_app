@@ -333,12 +333,12 @@ class _Category2State extends State<Category2> {
                               fontSize: 16,
                               color: Colors.grey),
                         ),
-                        // onTap: () {
-                        //   Navigator.of(context).push(MaterialPageRoute(
-                        //     builder: (context) => CatalogOne(
-                        //         category1: categry!.categories![index]),
-                        //   ));
-                        // },
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => CatalogOne(
+                                category1: categry!.categories![index]),
+                          ));
+                        },
                       ),
                     );
                   }),

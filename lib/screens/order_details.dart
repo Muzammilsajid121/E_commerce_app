@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/setting.dart';
 import 'package:flutter/material.dart';
 
 //order card
@@ -295,7 +296,17 @@ class OrderDetails extends StatelessWidget {
                                               side: BorderSide(
                                                   color: Colors.white),
                                               backgroundColor: Colors.red),
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder:
+                                                    (BuildContext context) {
+                                                  return Settings();
+                                                },
+                                              ),
+                                            );
+                                          },
                                           child: Text(
                                             "Leave Feedback",
                                             style:

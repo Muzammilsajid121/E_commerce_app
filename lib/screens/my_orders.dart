@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/order_details.dart';
 import 'package:flutter/material.dart';
 
 class OrderCard extends StatelessWidget {
@@ -107,7 +108,16 @@ class OrderCard extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,
                           side: BorderSide(color: Colors.white, width: 1)),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return OrderDetails();
+                            },
+                          ),
+                        );
+                      },
                       child: Text(
                         "Details",
                         style: TextStyle(color: Colors.white),
