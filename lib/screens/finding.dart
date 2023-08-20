@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/bottom_nav-bar.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 
@@ -92,7 +93,7 @@ class _FindingScreenState extends State<FindingScreen> {
 //To automatically switch to Main Screen After 2 seconds
   void SwitchToMainPage() {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => MainPage()));
+        context, MaterialPageRoute(builder: (context) => Navigation()));
   }
 
   @override

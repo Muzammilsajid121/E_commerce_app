@@ -1,3 +1,6 @@
+import 'package:e_commerce_app/screens/bottom_nav-bar.dart';
+import 'package:e_commerce_app/screens/main_page.dart';
+import 'package:e_commerce_app/screens/main_page2.dart';
 import 'package:flutter/material.dart';
 
 class Success extends StatelessWidget {
@@ -42,7 +45,16 @@ class Success extends StatelessWidget {
                     backgroundColor: Colors.red,
                     side: BorderSide(color: Colors.white, width: 1),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return Navigation();
+                        },
+                      ),
+                    );
+                  },
 
                   //chi;d of elevated
                   child: Text(

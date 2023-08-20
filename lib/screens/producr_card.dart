@@ -5,7 +5,8 @@ class Product extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Bottom sheet code Starts
+    //
+    //Size Bottom sheet code Starts
     void _showSizeModalBottomSheet() {
       showModalBottomSheet(
         context: context,
@@ -76,37 +77,40 @@ class Product extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      width: 100,
-                      height: 40,
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 58, 58, 63),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: Colors.white)),
-                      alignment: Alignment.center,
-                      child: Text(
-                        "L",
-                        style: TextStyle(color: Colors.white),
+                Padding(
+                  padding: const EdgeInsets.only(right: 150.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        width: 100,
+                        height: 40,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 58, 58, 63),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: Colors.white)),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "L",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
-                    ),
-                    //
-                    Container(
-                      width: 100,
-                      height: 40,
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 58, 58, 63),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: Colors.white)),
-                      alignment: Alignment.center,
-                      child: Text(
-                        "XL",
-                        style: TextStyle(color: Colors.white),
+                      //
+                      Container(
+                        width: 100,
+                        height: 40,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 58, 58, 63),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: Colors.white)),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "XL",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 //
                 //Row
@@ -163,10 +167,173 @@ class Product extends StatelessWidget {
     }
     //Bottom sheet code ends
 
+    //////////////////////////////////
+    ///
+    //Color Bottom sheet code Starts
+    void _showColorModalBottomSheet() {
+      showModalBottomSheet(
+        context: context,
+        backgroundColor: Color(0xff1E1F28),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+        ),
+        builder: (BuildContext context) {
+          return Container(
+            height: 370,
+            width: double.infinity,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: Text(
+                    "Select Color",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      width: 100,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 58, 58, 63),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: Colors.white)),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Black",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    Container(
+                      width: 100,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 58, 58, 63),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: Colors.white)),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Red",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    Container(
+                      width: 100,
+                      height: 40,
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 58, 58, 63),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: Colors.white)),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Green",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 16),
+                Padding(
+                  padding: const EdgeInsets.only(right: 150.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        width: 100,
+                        height: 40,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 58, 58, 63),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: Colors.white)),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "White",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      //
+                      Container(
+                        width: 100,
+                        height: 40,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 58, 58, 63),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: Colors.white)),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Blue",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                //
+                //Row
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Size info",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.arrow_right,
+                          color: Color(0xffABB4BD),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20),
+                //Button
+                SizedBox(
+                  height: 48,
+                  width: 440,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      side: BorderSide(color: Colors.white, width: 2),
+                    ),
+                    onPressed: () {},
+
+                    //chi;d of elevated
+                    child: Text(
+                      "ADD TO CART",
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall
+                          ?.copyWith(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      );
+    }
+    //Bottom sheet code ends
+    ///
+
     return Scaffold(
       backgroundColor: Color(0xff1E1F28),
       body: Padding(
-        // ... Your existing code ...
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
           child: Column(
@@ -184,7 +351,7 @@ class Product extends StatelessWidget {
                         ))),
               ),
               //ROW
-              //bottom Part
+              //bottom body Part
               const SizedBox(
                 height: 8,
               ),
@@ -236,12 +403,12 @@ class Product extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Size",
+                            "Color",
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
                           IconButton(
                               onPressed: () {
-                                _showSizeModalBottomSheet();
+                                _showColorModalBottomSheet();
                               },
                               icon: Icon(
                                 Icons.arrow_drop_down,
