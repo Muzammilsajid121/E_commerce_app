@@ -1,5 +1,5 @@
+import 'package:e_commerce_app/screens/bottom_nav-bar.dart';
 import 'package:flutter/material.dart';
-// import 'bottom_sheet.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -9,17 +9,28 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  ///
-  //////
+  @override
+  //// Add this function to your _SettingsState class
   void _showBottomSheet() {
     showModalBottomSheet(
+      backgroundColor: Color.fromARGB(255, 0, 10, 20),
+      elevation: 0,
+      isDismissible: false,
+      enableDrag: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
       context: context,
-      builder: (context) => Bottom_sheet(), // Use the Bottom_sheet class here
+      builder: (context) {
+        return Bottom_sheet(); // Show the Bottom_sheet widget here
+      },
     );
   }
-  /////
+//////////////
 
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff1E1F28),
@@ -31,9 +42,12 @@ class _SettingsState extends State<Settings> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Settings",
-                style: Theme.of(context).textTheme.titleLarge,
+              Padding(
+                padding: const EdgeInsets.only(top: 50.0),
+                child: Text(
+                  "Settings",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
               ),
               const SizedBox(
                 height: 8,
@@ -71,7 +85,7 @@ class _SettingsState extends State<Settings> {
               ),
 
               const SizedBox(
-                height: 14,
+                height: 22,
               ),
 
               //Pasword change
@@ -97,7 +111,7 @@ class _SettingsState extends State<Settings> {
                 ],
               ),
               const SizedBox(
-                height: 10,
+                height: 22,
               ),
               //
               const TextField(
@@ -131,10 +145,10 @@ class _SettingsState extends State<Settings> {
                   ),
                   //switch Button
                   Switch(
-                    activeColor: Colors.green,
-                    activeTrackColor: Color(0xffABB4BD),
-                    inactiveThumbColor: Colors.grey,
-                    inactiveTrackColor: Colors.grey[400],
+                    activeColor: Color(0xff55D85A),
+                    activeTrackColor: Color.fromARGB(255, 3, 160, 8),
+                    inactiveThumbColor: Color.fromARGB(255, 57, 61, 65),
+                    inactiveTrackColor: Color.fromARGB(255, 94, 94, 95),
                     value: true,
                     onChanged: (newValue) {
                       setState(() {
@@ -157,10 +171,10 @@ class _SettingsState extends State<Settings> {
                   ),
                   //switch Button
                   Switch(
-                    activeColor: Colors.green,
-                    activeTrackColor: Color(0xffABB4BD),
-                    inactiveThumbColor: Colors.grey,
-                    inactiveTrackColor: Colors.grey[400],
+                    activeColor: Color(0xff55D85A),
+                    activeTrackColor: Color.fromARGB(255, 3, 160, 8),
+                    inactiveThumbColor: Color.fromARGB(255, 57, 61, 65),
+                    inactiveTrackColor: Color.fromARGB(255, 94, 94, 95),
                     value: false,
                     onChanged: (newValue) {
                       setState(() {
@@ -183,10 +197,10 @@ class _SettingsState extends State<Settings> {
                   ),
                   //switch Button
                   Switch(
-                    activeColor: Colors.green,
-                    activeTrackColor: Color(0xffABB4BD),
-                    inactiveThumbColor: Colors.grey,
-                    inactiveTrackColor: Colors.grey[400],
+                    activeColor: Color(0xff55D85A),
+                    activeTrackColor: Color.fromARGB(255, 3, 160, 8),
+                    inactiveThumbColor: Color.fromARGB(255, 57, 61, 65),
+                    inactiveTrackColor: Color.fromARGB(255, 94, 94, 95),
                     value: false,
                     onChanged: (newValue) {
                       setState(() {
@@ -237,56 +251,59 @@ class _Bottom_sheetState extends State<Bottom_sheet> {
                     return Column(
                       children: [
                         SizedBox(
-                          height: 10,
+                          height: 5,
                         ),
                         Container(
                           height: 5,
-                          width: 70,
+                          width: 100,
                           decoration: BoxDecoration(
                               color: Color.fromARGB(255, 177, 176, 176),
                               borderRadius: BorderRadius.circular(20)),
                         ),
                         SizedBox(
-                          height: 8,
+                          height: 6,
                         ),
                         Text(
                           "Password Change",
                           style: TextStyle(fontSize: 18, color: Colors.white),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                          child: TextField(
-                            style: TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
-                              label: Text(
-                                'Old Password',
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                              hintText: "  Old Password ",
-                              hintStyle: TextStyle(
-                                color: Colors.grey,
-                                fontFamily: "Metropolis",
-                                fontSize: 14,
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(3),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(3),
+                          child: SizedBox(
+                            height: 45,
+                            child: TextField(
+                              style: TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                label: Text(
+                                  'Old Password',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                hintText: "  Old Password ",
+                                hintStyle: TextStyle(
+                                  color: Colors.grey,
+                                  fontFamily: "Metropolis",
+                                  fontSize: 14,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(3),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(3),
+                                ),
                               ),
                             ),
                           ),
                         ),
                         SizedBox(
-                          height: 16,
+                          height: 8,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 337.0),
+                          padding: const EdgeInsets.only(left: 0.0),
                           child: Text(
                             "Forgot Password?",
                             style: TextStyle(
@@ -296,70 +313,76 @@ class _Bottom_sheetState extends State<Bottom_sheet> {
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 8,
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                          child: TextField(
-                            style: TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
-                              label: Text(
-                                'New Password',
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                              hintText: "  New Password ",
-                              hintStyle: TextStyle(
-                                color: Colors.grey,
-                                fontFamily: "Metropolis",
-                                fontSize: 14,
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(3),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(3),
+                          child: SizedBox(
+                            height: 45,
+                            child: TextField(
+                              style: TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                label: Text(
+                                  'New Password',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                hintText: "  New Password ",
+                                hintStyle: TextStyle(
+                                  color: Colors.grey,
+                                  fontFamily: "Metropolis",
+                                  fontSize: 14,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(3),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(3),
+                                ),
                               ),
                             ),
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 8,
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                          child: TextField(
-                            style: TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
-                              label: Text(
-                                'Repeat New Password',
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                              hintText: "  Repeat New Password ",
-                              hintStyle: TextStyle(
-                                color: Colors.grey,
-                                fontFamily: "Metropolis",
-                                fontSize: 14,
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(3),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(3),
+                          child: SizedBox(
+                            height: 45,
+                            child: TextField(
+                              style: TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                label: Text(
+                                  'Repeat New Password',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                hintText: "  Repeat New Password ",
+                                hintStyle: TextStyle(
+                                  color: Colors.grey,
+                                  fontFamily: "Metropolis",
+                                  fontSize: 14,
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(3),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey),
+                                  borderRadius: BorderRadius.circular(3),
+                                ),
                               ),
                             ),
                           ),
                         ),
                         SizedBox(
-                          height: 30,
+                          height: 12,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 30.0),
                           child: SizedBox(
-                            width: 430,
+                            width: 320,
                             height: 50,
                             //wrap elevated button with sizedBox widget
                             child: ElevatedButton(
@@ -368,7 +391,7 @@ class _Bottom_sheetState extends State<Bottom_sheet> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (BuildContext context) {
-                                      return Bottom_sheet();
+                                      return Navigation();
                                     },
                                   ),
                                 );
@@ -377,7 +400,9 @@ class _Bottom_sheetState extends State<Bottom_sheet> {
                               child: Text(
                                 'SAVE PASSWORD',
                                 style: TextStyle(
-                                    fontFamily: "Metropolis", fontSize: 15),
+                                    fontFamily: "Metropolis",
+                                    fontSize: 15,
+                                    color: Colors.white),
                               ),
                               style: ElevatedButton.styleFrom(
                                 primary: Color.fromARGB(255, 230, 5, 65),

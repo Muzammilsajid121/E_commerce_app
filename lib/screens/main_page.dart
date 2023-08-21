@@ -114,10 +114,10 @@ class _MainPageState extends State<MainPage> {
                           //
                           //Button
                           Padding(
-                            padding: const EdgeInsets.only(top: 25.0),
+                            padding: const EdgeInsets.only(top: 20.0),
                             child: SizedBox(
-                              width: 145,
-                              height: 30,
+                              width: 140,
+                              height: 38,
                               //wrap elevated button with sizedBox widget
                               child: ElevatedButton(
                                 onPressed: () {
@@ -219,7 +219,7 @@ class _MainPageState extends State<MainPage> {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(16),
                                       child: Image.network(
-                                        "${welcome!.products![index].image}",
+                                        "${welcome?.products![index].image}",
                                         fit: BoxFit.fill,
                                       ),
                                     ),
@@ -255,7 +255,7 @@ class _MainPageState extends State<MainPage> {
                                   child: Text(
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    "${welcome!.products![index].description}",
+                                    "${welcome?.products![index].description}",
                                     style: TextStyle(
                                         fontFamily: "Metropolis",
                                         fontSize: 11,
@@ -271,7 +271,7 @@ class _MainPageState extends State<MainPage> {
                                   child: Text(
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    "${welcome!.products![index].name}",
+                                    "${welcome?.products![index].name}",
                                     style: TextStyle(
                                         fontFamily: "Metropolis",
                                         fontSize: 16,
@@ -284,7 +284,7 @@ class _MainPageState extends State<MainPage> {
                                 padding:
                                     const EdgeInsets.only(left: 6.0, top: 4),
                                 child: Text(
-                                  "${welcome!.products![index].price}",
+                                  "${welcome?.products![index].price}",
                                   style: TextStyle(
                                       fontFamily: "Metropolis",
                                       fontSize: 14,

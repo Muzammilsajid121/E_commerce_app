@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/add_shopping_adress.dart';
 import 'package:flutter/material.dart';
 
 class CheckOut extends StatelessWidget {
@@ -16,7 +17,7 @@ class CheckOut extends StatelessWidget {
       builder: (BuildContext context) {
         return Container(
           height: 370,
-          // width: double.infinity,
+          width: double.infinity,
           child: Column(
             children: [
               const Padding(
@@ -337,12 +338,21 @@ class CheckOut extends StatelessWidget {
                         backgroundColor: Colors.red,
                         side: BorderSide(color: Colors.white, width: 1),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return Add_Shopping_Address();
+                            },
+                          ),
+                        );
+                      },
 
                       //chi;d of elevated
                       child: Text(
                         "SUBMIT ORDER",
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ),
                   ),

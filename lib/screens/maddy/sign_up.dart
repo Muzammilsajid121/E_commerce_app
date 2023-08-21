@@ -185,6 +185,9 @@ class _SignUPState extends State<SignUP> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 20,
+                    ),
 
                     //Account Already
                     Row(

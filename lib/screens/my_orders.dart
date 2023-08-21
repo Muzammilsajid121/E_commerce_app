@@ -24,7 +24,7 @@ class OrderCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: SizedBox(
-        height: 130,
+        height: 150,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
@@ -113,7 +113,7 @@ class OrderCard extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (BuildContext context) {
-                              return OrderDetails();
+                              return OrderDetail();
                             },
                           ),
                         );
@@ -163,15 +163,19 @@ class MyOrders extends StatelessWidget {
         width: double.infinity,
         child: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(right: 300.0),
+                padding: const EdgeInsets.only(left: 20.0),
                 child: Text(
                   "My orders",
                   style: Theme.of(context).textTheme.headline6,
                 ),
               ),
-
+              const SizedBox(
+                height: 20,
+              ),
               // First Order Card
               OrderCard(
                 orderNo: "1947034",

@@ -370,7 +370,7 @@ class MyBag extends StatelessWidget {
                       //chi;d of elevated
                       child: Text(
                         "CHECK OUT",
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ),
                   ),

@@ -59,7 +59,7 @@ class Success extends StatelessWidget {
                   //chi;d of elevated
                   child: Text(
                     "CONTINUE SHOPPING",
-                    style: Theme.of(context).textTheme.bodySmall,
+                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
               ),

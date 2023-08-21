@@ -1,8 +1,11 @@
+import 'package:e_commerce_app/screens/categories_2.dart';
 import 'package:e_commerce_app/screens/maddy/forgot_pass.dart';
 import 'package:e_commerce_app/screens/maddy/login_screen.dart';
 import 'package:e_commerce_app/screens/maddy/my_profile.dart';
 import 'package:e_commerce_app/screens/maddy/sign_up.dart';
 import 'package:e_commerce_app/screens/my_orders.dart';
+import 'package:e_commerce_app/screens/order_details.dart';
+import 'package:e_commerce_app/screens/setting.dart';
 import 'package:e_commerce_app/screens/visual_search.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,7 +64,7 @@ class MyApp extends StatelessWidget {
             //Body Large
             bodyLarge: GoogleFonts.dmSans(fontSize: 18, color: Colors.white),
             //title Medium
-            titleMedium: GoogleFonts.dmSans(
+            titleMedium: GoogleFonts.metrophobic(
                 fontSize: 24, color: Colors.white, fontWeight: FontWeight.w700),
             //title Large
             titleLarge: GoogleFonts.metrophobic(
@@ -78,7 +81,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Profile(),
+      home: Navigation(),
     );
   }
 }

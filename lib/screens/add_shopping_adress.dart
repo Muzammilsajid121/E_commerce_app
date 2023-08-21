@@ -214,34 +214,36 @@ class _Add_Shopping_AddressState extends State<Add_Shopping_Address> {
             height: 46,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 36.0),
-            child: SizedBox(
-              width: 430,
-              height: 50,
-              //wrap elevated button with sizedBox widget
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) {
-                        return Success();
-                      },
+            padding: const EdgeInsets.only(left: 0.0),
+            child: Center(
+              child: SizedBox(
+                width: 380,
+                height: 50,
+                //wrap elevated button with sizedBox widget
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return Success();
+                        },
+                      ),
+                    );
+                  },
+                  // style: ElevatedButton.styleFrom(shadowColor: Colors.green),
+                  child: Text(
+                    'SAVE ADDRESS',
+                    style: TextStyle(
+                        fontFamily: "Metropolis",
+                        fontSize: 15,
+                        color: Colors.white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                  );
-                },
-                // style: ElevatedButton.styleFrom(shadowColor: Colors.green),
-                child: Text(
-                  'SAVE ADDRESS',
-                  style: TextStyle(
-                      fontFamily: "Metropolis",
-                      fontSize: 15,
-                      color: Colors.white),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
                   ),
                 ),
               ),
