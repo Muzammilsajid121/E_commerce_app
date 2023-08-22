@@ -3,7 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:http/http.dart' as http;
 import 'package:e_commerce_app/categories2_model.dart';
 import 'package:e_commerce_app/main_page_model.dart';
-import 'sortby_bottomsheet.dart';
+
 import 'package:e_commerce_app/categories2_model.dart';
 import 'package:e_commerce_app/main_page_model.dart';
 import 'package:e_commerce_app/main_page2_model.dart';

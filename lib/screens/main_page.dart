@@ -34,40 +34,6 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     // int currentSelectedIndex = 0;
     return Scaffold(
-      // bottomNavigationBar: BottomNavigationBar(
-      //   backgroundColor: Color.fromARGB(255, 0, 10, 20),
-      //   currentIndex: currentSelectedIndex,
-      //   unselectedItemColor: Colors.white,
-      //   fixedColor: Colors.white,
-      //   type: BottomNavigationBarType.fixed,
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: Image.asset('assets/hm.png'),
-      //       label: "Home",
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Image.asset('assets/sp.png'),
-      //       label: "Shop",
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Image.asset('assets/bg.png'),
-      //       label: "Bag",
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Image.asset('assets/ht.png'),
-      //       label: "Favorites",
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Image.asset('assets/ac.png'),
-      //       label: "Profile",
-      //     ),
-      //   ],
-      //   onTap: ((index) {
-      //     setState(() {
-      //       currentSelectedIndex = index;
-      //     });
-      //   }),
-      // ),
       backgroundColor: Color.fromARGB(255, 0, 10, 20),
       body: SingleChildScrollView(
         child: Column(
@@ -197,103 +163,106 @@ class _MainPageState extends State<MainPage> {
                   Container(
                     height: 290,
                     // width: 1000,
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: welcome?.products!.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 160,
-                                width: 150,
-                                decoration: BoxDecoration(
-                                  //  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
-                                child: Card(
-                                  // color: Color.fromARGB(255, 0, 10, 20),
-                                  child: Container(
-                                    // width: 120,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(16),
-                                      child: Image.network(
-                                        "${welcome?.products![index].image}",
-                                        fit: BoxFit.fill,
+                    child: welcome == null
+                        ? Center(child: CircularProgressIndicator())
+                        : ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: welcome?.products!.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    height: 160,
+                                    width: 150,
+                                    decoration: BoxDecoration(
+                                      //  color: Colors.black,
+                                      borderRadius: BorderRadius.circular(50),
+                                    ),
+                                    child: Card(
+                                      // color: Color.fromARGB(255, 0, 10, 20),
+                                      child: Container(
+                                        // width: 120,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(16),
+                                          child: Image.network(
+                                            "${welcome?.products![index].image}",
+                                            fit: BoxFit.fill,
+                                          ),
+                                        ),
+                                      ),
+
+                                      // title:
+                                      // ),
+                                    ),
+                                  ),
+                                  RatingBar.builder(
+                                      initialRating: 2,
+                                      minRating: 1,
+                                      itemSize: 30,
+                                      direction: Axis.horizontal,
+                                      allowHalfRating: true,
+                                      itemPadding:
+                                          EdgeInsets.symmetric(horizontal: 0),
+                                      itemBuilder: (context, _) => SizedBox(
+                                          width: 30,
+                                          child: Icon(
+                                            Icons.star,
+                                            color: Colors.amber,
+                                            size: 20,
+                                          )),
+                                      onRatingUpdate: (rating) {
+                                        print(rating);
+                                      }),
+                                  SizedBox(
+                                    width: 150,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 6.0, top: 4),
+                                      child: Text(
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        "${welcome?.products![index].description}",
+                                        style: TextStyle(
+                                            fontFamily: "Metropolis",
+                                            fontSize: 11,
+                                            color: Colors.grey),
                                       ),
                                     ),
                                   ),
-
-                                  // title:
-                                  // ),
-                                ),
-                              ),
-                              RatingBar.builder(
-                                  initialRating: 2,
-                                  minRating: 1,
-                                  itemSize: 30,
-                                  direction: Axis.horizontal,
-                                  allowHalfRating: true,
-                                  itemPadding:
-                                      EdgeInsets.symmetric(horizontal: 0),
-                                  itemBuilder: (context, _) => SizedBox(
-                                      width: 30,
-                                      child: Icon(
-                                        Icons.star,
-                                        color: Colors.amber,
-                                        size: 20,
-                                      )),
-                                  onRatingUpdate: (rating) {
-                                    print(rating);
-                                  }),
-                              SizedBox(
-                                width: 150,
-                                child: Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 6.0, top: 4),
-                                  child: Text(
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    "${welcome?.products![index].description}",
-                                    style: TextStyle(
-                                        fontFamily: "Metropolis",
-                                        fontSize: 11,
-                                        color: Colors.grey),
+                                  SizedBox(
+                                    width: 150,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 6.0, top: 4),
+                                      child: Text(
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        "${welcome?.products![index].name}",
+                                        style: TextStyle(
+                                            fontFamily: "Metropolis",
+                                            fontSize: 16,
+                                            // fontWeight: FontWeight.bold,
+                                            color: Colors.white),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 150,
-                                child: Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 6.0, top: 4),
-                                  child: Text(
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    "${welcome?.products![index].name}",
-                                    style: TextStyle(
-                                        fontFamily: "Metropolis",
-                                        fontSize: 16,
-                                        // fontWeight: FontWeight.bold,
-                                        color: Colors.white),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 6.0, top: 4),
+                                    child: Text(
+                                      "${welcome?.products![index].price}",
+                                      style: TextStyle(
+                                          fontFamily: "Metropolis",
+                                          fontSize: 14,
+                                          color: Colors.red),
+                                    ),
                                   ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 6.0, top: 4),
-                                child: Text(
-                                  "${welcome?.products![index].price}",
-                                  style: TextStyle(
-                                      fontFamily: "Metropolis",
-                                      fontSize: 14,
-                                      color: Colors.red),
-                                ),
-                              ),
-                            ],
-                          );
-                        }),
+                                ],
+                              );
+                            }),
                   ),
                 ],
               ),
