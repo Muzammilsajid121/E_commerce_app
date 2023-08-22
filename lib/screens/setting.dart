@@ -9,14 +9,9 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  @override
-  //// Add this function to your _SettingsState class
   void _showBottomSheet() {
     showModalBottomSheet(
-      backgroundColor: Color.fromARGB(255, 0, 10, 20),
-      elevation: 0,
-      isDismissible: false,
-      enableDrag: true,
+      backgroundColor: Color(0xff1E1F28),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
@@ -24,12 +19,16 @@ class _SettingsState extends State<Settings> {
         ),
       ),
       context: context,
+      isScrollControlled: false, // This will make the sheet full height
       builder: (context) {
-        return Bottom_sheet(); // Show the Bottom_sheet widget here
+        return Container(
+          width: double.infinity,
+          height: 500,
+          child: BottomSheetContent(),
+        );
       },
     );
   }
-//////////////
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,16 +103,17 @@ class _SettingsState extends State<Settings> {
                       "Change",
                       style: Theme.of(context)
                           .textTheme
-                          .bodyMedium
+                          .bodyText1
                           ?.copyWith(color: Colors.grey),
                     ),
                   ),
                 ],
               ),
+
               const SizedBox(
-                height: 22,
+                height: 12,
               ),
-              //
+
               const TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -218,205 +218,163 @@ class _SettingsState extends State<Settings> {
   }
 }
 
-////////////////////
-//////////////////////bottom sheet
-
-class Bottom_sheet extends StatefulWidget {
-  const Bottom_sheet({Key? key}) : super(key: key);
-
-  @override
-  State<Bottom_sheet> createState() => _Bottom_sheetState();
-}
-
-class _Bottom_sheetState extends State<Bottom_sheet> {
+class BottomSheetContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-            child: Text("Show Bottom Sheet"),
-            onPressed: () {
-              showModalBottomSheet(
-                  backgroundColor: Color.fromARGB(255, 0, 10, 20),
-                  elevation: 0,
-                  isDismissible: false,
-                  enableDrag: true,
+    return Container(
+      // width: double.infinity,
+      // height: 500,
+      color: Color(0xff1E1F28),
+      child: Column(
+        children: [
+          Text(
+            "Password Change",
+            style: TextStyle(fontSize: 18, color: Colors.white),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: SizedBox(
+              height: 45,
+              child: TextField(
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  label: Text(
+                    'Old Password',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  hintText: "  Old Password ",
+                  hintStyle: TextStyle(
+                    color: Colors.grey,
+                    fontFamily: "Metropolis",
+                    fontSize: 14,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 0.0),
+            child: Text(
+              "Forgot Password?",
+              style: TextStyle(
+                  fontSize: 14, color: Colors.grey, fontFamily: "Metropolis"),
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: SizedBox(
+              height: 45,
+              child: TextField(
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  label: Text(
+                    'New Password',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  hintText: "  New Password ",
+                  hintStyle: TextStyle(
+                    color: Colors.grey,
+                    fontFamily: "Metropolis",
+                    fontSize: 14,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 8,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: SizedBox(
+              height: 45,
+              child: TextField(
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  label: Text(
+                    'Repeat New Password',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  hintText: "  Repeat New Password ",
+                  hintStyle: TextStyle(
+                    color: Colors.grey,
+                    fontFamily: "Metropolis",
+                    fontSize: 14,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 12,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 30.0),
+            child: SizedBox(
+              width: 320,
+              height: 50,
+              //wrap elevated button with sizedBox widget
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return Navigation();
+                      },
+                    ),
+                  );
+                },
+                child: Text(
+                  'SAVE PASSWORD',
+                  style: TextStyle(
+                      fontFamily: "Metropolis",
+                      fontSize: 15,
+                      color: Colors.white),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 230, 5, 65),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                  )),
-                  context: context,
-                  builder: (context) {
-                    return Column(
-                      children: [
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Container(
-                          height: 5,
-                          width: 100,
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 177, 176, 176),
-                              borderRadius: BorderRadius.circular(20)),
-                        ),
-                        SizedBox(
-                          height: 6,
-                        ),
-                        Text(
-                          "Password Change",
-                          style: TextStyle(fontSize: 18, color: Colors.white),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                          child: SizedBox(
-                            height: 45,
-                            child: TextField(
-                              style: TextStyle(color: Colors.white),
-                              decoration: InputDecoration(
-                                label: Text(
-                                  'Old Password',
-                                  style: TextStyle(color: Colors.grey),
-                                ),
-                                hintText: "  Old Password ",
-                                hintStyle: TextStyle(
-                                  color: Colors.grey,
-                                  fontFamily: "Metropolis",
-                                  fontSize: 14,
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(3),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(3),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 0.0),
-                          child: Text(
-                            "Forgot Password?",
-                            style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey,
-                                fontFamily: "Metropolis"),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                          child: SizedBox(
-                            height: 45,
-                            child: TextField(
-                              style: TextStyle(color: Colors.white),
-                              decoration: InputDecoration(
-                                label: Text(
-                                  'New Password',
-                                  style: TextStyle(color: Colors.grey),
-                                ),
-                                hintText: "  New Password ",
-                                hintStyle: TextStyle(
-                                  color: Colors.grey,
-                                  fontFamily: "Metropolis",
-                                  fontSize: 14,
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(3),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(3),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                          child: SizedBox(
-                            height: 45,
-                            child: TextField(
-                              style: TextStyle(color: Colors.white),
-                              decoration: InputDecoration(
-                                label: Text(
-                                  'Repeat New Password',
-                                  style: TextStyle(color: Colors.grey),
-                                ),
-                                hintText: "  Repeat New Password ",
-                                hintStyle: TextStyle(
-                                  color: Colors.grey,
-                                  fontFamily: "Metropolis",
-                                  fontSize: 14,
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(3),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(3),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 12,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 30.0),
-                          child: SizedBox(
-                            width: 320,
-                            height: 50,
-                            //wrap elevated button with sizedBox widget
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (BuildContext context) {
-                                      return Navigation();
-                                    },
-                                  ),
-                                );
-                              },
-                              // style: ElevatedButton.styleFrom(shadowColor: Colors.green),
-                              child: Text(
-                                'SAVE PASSWORD',
-                                style: TextStyle(
-                                    fontFamily: "Metropolis",
-                                    fontSize: 15,
-                                    color: Colors.white),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                primary: Color.fromARGB(255, 230, 5, 65),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    );
-                  });
-            }),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
