@@ -6,127 +6,7 @@ class CheckOut extends StatelessWidget {
 
   @override
   //
-  //Size Bottom sheet code Starts
-  void _addCardModalBottomSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Color(0xff1E1F28),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-      ),
-      builder: (BuildContext context) {
-        return Container(
-          height: 370,
-          width: double.infinity,
-          child: Column(
-            children: [
-              const Padding(
-                padding: const EdgeInsets.only(top: 16),
-                child: Text(
-                  "Add New Card",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              //List Views
-              ListView(
-                children: [
-                  SizedBox(
-                    width: 343,
-                    height: 64,
-                    child: ListTile(
-                      title: Text(
-                        "Name on card",
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
-                    ),
-                  ),
-                  //
-                  SizedBox(
-                    width: 343,
-                    height: 64,
-                    child: ListTile(
-                      title: Text(
-                        "Card Number",
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
-                      subtitle: Text(
-                        "5546 8205 3693 3947",
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
-                      trailing: Image.asset("assets/card.png"),
-                    ),
-                  ),
-                  //
-                  SizedBox(
-                    width: 343,
-                    height: 64,
-                    child: ListTile(
-                      title: Text(
-                        "Expire date",
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
-                      subtitle: Text(
-                        "5/23",
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
-                    ),
-                  ),
-                  //
-                  SizedBox(
-                    width: 343,
-                    height: 64,
-                    child: ListTile(
-                        title: Text(
-                          "CVV",
-                          style: Theme.of(context).textTheme.bodySmall,
-                        ),
-                        subtitle: Text(
-                          "567",
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
-                        trailing: const Icon(
-                          Icons.question_mark_rounded,
-                          color: Colors.grey,
-                        )),
-                  ),
-                ],
-              ),
 
-              SizedBox(height: 20),
-              //Button
-              SizedBox(
-                height: 48,
-                width: 440,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    side: BorderSide(color: Colors.white, width: 2),
-                  ),
-                  onPressed: () {},
-
-                  //chi;d of elevated
-                  child: Text(
-                    "ADD CARD",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodySmall
-                        ?.copyWith(color: Colors.white),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  //Bottom sheet code ends
-  //
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
@@ -220,10 +100,170 @@ class CheckOut extends StatelessWidget {
                           backgroundColor: Colors.red,
                           side: BorderSide(color: Colors.white, width: 1),
                         ),
-                        onPressed: () {
-                          _addCardModalBottomSheet(context);
-                        },
 
+                        //
+                        //
+                        //Bottom Sheet
+                        onPressed: () {
+                          showModalBottomSheet(
+                            context: context,
+                            // isScrollControlled:
+                            //     true, // This allows the content to scroll within the sheet
+                            builder: (BuildContext context) {
+                              return Container(
+                                height: 500,
+                                width: double.infinity,
+                                color: Color(0xff1E1F28),
+                                padding: EdgeInsets.all(15),
+                                child: Column(
+                                  children: [
+                                    //
+                                    //
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 16),
+                                      child: Text(
+                                        "Add New Card",
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                    //List Views
+                                    SizedBox(
+                                      height: 8,
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: Color(0xff2A2C36),
+                                        borderRadius: BorderRadius.circular(3),
+                                      ),
+                                      height: 50,
+                                      width: double.infinity,
+                                      child: ListTile(
+                                        title: Text(
+                                          "Name on card",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 8,
+                                    ),
+                                    //
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: Color(0xff2A2C36),
+                                        borderRadius: BorderRadius.circular(3),
+                                      ),
+                                      height: 50,
+                                      width: double.infinity,
+                                      child: ListTile(
+                                        title: Text(
+                                          "Card Number",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall,
+                                        ),
+                                        subtitle: Text(
+                                          "5546 8205 3693 3947",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyMedium,
+                                        ),
+                                        trailing:
+                                            Image.asset("assets/card.png"),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 8,
+                                    ),
+                                    //
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: Color(0xff2A2C36),
+                                        borderRadius: BorderRadius.circular(3),
+                                      ),
+                                      height: 50,
+                                      width: double.infinity,
+                                      child: ListTile(
+                                        title: Text(
+                                          "Expire date",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall,
+                                        ),
+                                        subtitle: Text(
+                                          "5/23",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyMedium,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 8,
+                                    ),
+                                    //
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: Color(0xff2A2C36),
+                                        borderRadius: BorderRadius.circular(3),
+                                      ),
+                                      height: 50,
+                                      width: double.infinity,
+                                      child: ListTile(
+                                          title: Text(
+                                            "CVV",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall,
+                                          ),
+                                          subtitle: Text(
+                                            "567",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyMedium,
+                                          ),
+                                          trailing: const Icon(
+                                            Icons.question_mark_rounded,
+                                            color: Colors.grey,
+                                          )),
+                                    ),
+                                    SizedBox(
+                                      height: 8,
+                                    ),
+                                    SizedBox(
+                                      width: 343,
+                                      height: 45,
+                                      child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Colors.red,
+                                          side: BorderSide(
+                                              color: Colors.white, width: 2),
+                                        ),
+                                        onPressed: () {},
+
+                                        //chi;d of elevated
+                                        child: Text(
+                                          "ADD CARD",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodySmall
+                                              ?.copyWith(color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                        },
+//Bottom Sheet code ends
                         //chi;d of elevated
                         child: Text(
                           "ADD",
