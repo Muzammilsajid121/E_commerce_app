@@ -128,7 +128,7 @@ class _Category2State extends State<Category2> {
                       color: Color.fromARGB(255, 0, 10, 20),
                       child: ListTile(
                         title: Text(
-                          "${categry!.categories![index].name}",
+                          "${categry?.categories![index].name}",
                           style: TextStyle(
                               fontFamily: "Metropolis",
                               fontSize: 16,

@@ -187,7 +187,7 @@ class CheckOut extends StatelessWidget {
                                         color: Color(0xff2A2C36),
                                         borderRadius: BorderRadius.circular(3),
                                       ),
-                                      height: 50,
+                                      height: 60,
                                       width: double.infinity,
                                       child: ListTile(
                                         title: Text(
@@ -213,7 +213,7 @@ class CheckOut extends StatelessWidget {
                                         color: Color(0xff2A2C36),
                                         borderRadius: BorderRadius.circular(3),
                                       ),
-                                      height: 50,
+                                      height: 60,
                                       width: double.infinity,
                                       child: ListTile(
                                           title: Text(
