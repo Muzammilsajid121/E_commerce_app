@@ -118,7 +118,7 @@ class _ForgotPassState extends State<ForgotPass> {
                     width: 440,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
+                        backgroundColor: Color.fromARGB(255, 230, 5, 65),
                         side: BorderSide(color: Colors.white, width: 2),
                       ),
                       onPressed: () {
@@ -138,7 +138,7 @@ class _ForgotPassState extends State<ForgotPass> {
                       //chi;d of elevated
                       child: Text(
                         "Send",
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ),
                   ),

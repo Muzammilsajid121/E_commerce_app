@@ -173,14 +173,7 @@ class Rating extends StatelessWidget {
                                     height: 10,
                                   ),
                                   //Stars
-                                  SizedBox(
-                                      height: 20,
-                                      width: 20,
-                                      child:
-                                          StarsRating()), // Add the StarsRating widget here
-                                  SizedBox(
-                                    height: 10,
-                                  ),
+
                                   //
                                   Text(
                                     "Please share your opinion\n       about the product ",
@@ -199,7 +192,7 @@ class Rating extends StatelessWidget {
                                           borderRadius:
                                               BorderRadius.circular(8),
                                         ),
-                                        height: 120,
+                                        height: 100,
                                         width: double.infinity,
                                       ),
                                     ),
@@ -208,7 +201,7 @@ class Rating extends StatelessWidget {
                                   //Botttom sheet Button
                                   //Button
                                   SizedBox(
-                                    width: 343,
+                                    width: 333,
                                     height: 48,
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(

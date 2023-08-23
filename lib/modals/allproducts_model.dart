@@ -1,21 +1,21 @@
 import 'dart:convert';
 
-Welcome1 welcome1FromJson(String str) => Welcome1.fromJson(json.decode(str));
+Welcome2 welcome2FromJson(String str) => Welcome2.fromJson(json.decode(str));
 
-String welcome1ToJson(Welcome1 data) => json.encode(data.toJson());
+String welcomeToJson(Welcome2 data) => json.encode(data.toJson());
 
-class Welcome1 {
-  List<Product>? products;
+class Welcome2 {
+  List<Product2>? products;
 
-  Welcome1({
+  Welcome2({
     this.products,
   });
 
-  factory Welcome1.fromJson(Map<String, dynamic> json) => Welcome1(
+  factory Welcome2.fromJson(Map<String, dynamic> json) => Welcome2(
         products: json["products"] == null
             ? []
-            : List<Product>.from(
-                json["products"]!.map((x) => Product.fromJson(x))),
+            : List<Product2>.from(
+                json["products"]!.map((x) => Product2.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -25,7 +25,7 @@ class Welcome1 {
       };
 }
 
-class Product {
+class Product2 {
   String? id;
   Category? category;
   Category? tag;
@@ -37,8 +37,9 @@ class Product {
   int? reviews;
   DateTime? dateModified;
   DateTime? dateCreated;
+  bool isfavorited;
 
-  Product({
+  Product2({
     this.id,
     this.category,
     this.tag,
@@ -50,9 +51,10 @@ class Product {
     this.reviews,
     this.dateModified,
     this.dateCreated,
+    this.isfavorited = false,
   });
 
-  factory Product.fromJson(Map<String, dynamic> json) => Product(
+  factory Product2.fromJson(Map<String, dynamic> json) => Product2(
         id: json["id"],
         category: json["category"] == null
             ? null

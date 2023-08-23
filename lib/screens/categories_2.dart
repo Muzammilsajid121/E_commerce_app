@@ -1,14 +1,12 @@
-import 'dart:convert';
-
 import 'package:e_commerce_app/screens/bottom_nav-bar.dart';
-import 'package:e_commerce_app/screens/catalog1.dart';
 import 'package:e_commerce_app/screens/main_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:e_commerce_app/categories2_model.dart';
 
-///////////////////////////////
+import '../categories2_model.dart';
+import 'catalog1.dart';
+
 class Category2 extends StatefulWidget {
   const Category2({Key? key}) : super(key: key);
 
@@ -75,7 +73,7 @@ class _Category2State extends State<Category2> {
               child: Padding(
                 padding: const EdgeInsets.only(top: 30.0),
                 child: SizedBox(
-                  width: 400,
+                  width: 430,
                   height: 50,
                   //wrap elevated button with sizedBox widget
                   child: ElevatedButton(
@@ -99,7 +97,7 @@ class _Category2State extends State<Category2> {
                           color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
+                      primary: Color.fromARGB(255, 230, 5, 65),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -109,7 +107,7 @@ class _Category2State extends State<Category2> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 0.0, top: 10),
+              padding: const EdgeInsets.only(right: 356.0, top: 10),
               child: Text(
                 'Choose category',
                 style: TextStyle(
@@ -121,28 +119,30 @@ class _Category2State extends State<Category2> {
             ),
             Container(
               height: 510,
-              child: ListView.builder(
-                  itemCount: categry?.categories!.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Card(
-                      color: Color.fromARGB(255, 0, 10, 20),
-                      child: ListTile(
-                        title: Text(
-                          "${categry?.categories![index].name}",
-                          style: TextStyle(
-                              fontFamily: "Metropolis",
-                              fontSize: 16,
-                              color: Colors.grey),
-                        ),
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => CatalogOne(
-                                category1: categry!.categories![index]),
-                          ));
-                        },
-                      ),
-                    );
-                  }),
+              child: categry == null
+                  ? Center(child: CircularProgressIndicator())
+                  : ListView.builder(
+                      itemCount: categry!.categories!.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Card(
+                          color: Color.fromARGB(255, 0, 10, 20),
+                          child: ListTile(
+                            title: Text(
+                              "${categry!.categories![index].name}",
+                              style: TextStyle(
+                                  fontFamily: "Metropolis",
+                                  fontSize: 16,
+                                  color: Colors.grey),
+                            ),
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => CatalogOne(
+                                    category1: categry!.categories![index]),
+                              ));
+                            },
+                          ),
+                        );
+                      }),
             ),
           ],
         ),

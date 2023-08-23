@@ -222,7 +222,7 @@ class _SignUPState extends State<SignUP> {
                         width: 440,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.red,
+                            backgroundColor: Color(0xffEF3651),
                             side: BorderSide(color: Colors.white, width: 2),
                           ),
                           onPressed: () {
@@ -236,7 +236,7 @@ class _SignUPState extends State<SignUP> {
                           //chi;d of elevated
                           child: Text(
                             "Sign Up",
-                            style: Theme.of(context).textTheme.bodySmall,
+                            style: Theme.of(context).textTheme.bodyMedium,
                           ),
                         ),
                       ),

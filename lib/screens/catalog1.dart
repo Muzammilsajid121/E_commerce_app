@@ -1,12 +1,12 @@
+///
+
+import 'package:e_commerce_app/screens/producr_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:http/http.dart' as http;
-import 'package:e_commerce_app/categories2_model.dart';
-import 'package:e_commerce_app/main_page_model.dart';
 
-import 'package:e_commerce_app/categories2_model.dart';
-import 'package:e_commerce_app/main_page_model.dart';
-import 'package:e_commerce_app/main_page2_model.dart';
+import '../categories2_model.dart';
+import '../modals/main_page_model.dart';
 
 class CatalogOne extends StatefulWidget {
   final CategoryElement category1;
@@ -89,8 +89,6 @@ class _CatalogOneState extends State<CatalogOne> {
                         children: [
                           TabBar(
                             indicator: null,
-                            dividerColor: Colors.transparent,
-                            indicatorColor: Colors.transparent,
                             automaticIndicatorColorAdjustment: false,
                             indicatorWeight: 0.1,
                             isScrollable: true, // Enable scrolling for tabs
@@ -104,7 +102,7 @@ class _CatalogOneState extends State<CatalogOne> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(16)),
                                 width: 100,
-                                height: 30,
+                                height: 25,
                                 alignment: Alignment.center,
                                 child: Text('t-shirts'),
                               ),
@@ -113,7 +111,7 @@ class _CatalogOneState extends State<CatalogOne> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(16)),
                                 width: 100,
-                                height: 30,
+                                height: 25,
                                 alignment: Alignment.center,
                                 child: Text('tops'),
                               ),
@@ -122,7 +120,7 @@ class _CatalogOneState extends State<CatalogOne> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(16)),
                                 width: 100,
-                                height: 30,
+                                height: 25,
                                 alignment: Alignment.center,
                                 child: Text('sleeveless'),
                               ),
@@ -131,7 +129,7 @@ class _CatalogOneState extends State<CatalogOne> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(16)),
                                 width: 100,
-                                height: 30,
+                                height: 25,
                                 alignment: Alignment.center,
                                 child: Text('blouses'),
                               ),
@@ -140,7 +138,7 @@ class _CatalogOneState extends State<CatalogOne> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(16)),
                                 width: 100,
-                                height: 30,
+                                height: 25,
                                 alignment: Alignment.center,
                                 child: Text('prexy'),
                               ),
@@ -467,137 +465,161 @@ class _CatalogOneState extends State<CatalogOne> {
                 // color:Color.fromARGB(255, 0, 10, 20),
                 height: 2000,
                 // width: 1000,
-                child: ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: product!.products!.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(9.0),
-                            child: Container(
-                              height: 140,
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              child: Card(
-                                color: Color.fromARGB(255, 1, 23, 44),
-                                // color: Color.fromARGB(255, 0, 10, 20),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      width: 100,
-                                      height: 200,
-                                      // width: 120,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(6),
-                                        child: Image.network(
-                                          "${product!.products![index].image}",
-                                          fit: BoxFit.fill,
-                                        ),
-                                      ),
+                child: product == null
+                    ? Center(child: CircularProgressIndicator())
+                    : ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        itemCount: product!.products!.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Product_cat(
+                                    product1: product!.products![index]),
+                              ));
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(9.0),
+                                  child: Container(
+                                    height: 140,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50),
                                     ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Column(
-                                      children: [
-                                        SizedBox(
-                                          width: 150,
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsets.only(top: 20),
-                                            child: Text(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              "${product!.products![index].name}",
-                                              style: TextStyle(
-                                                  fontFamily: "Metropolis",
-                                                  fontSize: 16,
-                                                  // fontWeight: FontWeight.bold,
-                                                  color: Colors.white),
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 150,
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsets.only(top: 6),
-                                            child: Text(
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                              "${product!.products![index].description}",
-                                              style: TextStyle(
-                                                  fontFamily: "Metropolis",
-                                                  fontSize: 11,
-                                                  color: Colors.grey),
-                                            ),
-                                          ),
-                                        ),
-                                        Row(
-                                          children: [
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 0.0),
-                                              child: RatingBar.builder(
-                                                  initialRating: 2,
-                                                  minRating: 1,
-                                                  itemSize: 26,
-                                                  direction: Axis.horizontal,
-                                                  allowHalfRating: true,
-                                                  itemPadding:
-                                                      EdgeInsets.symmetric(
-                                                          horizontal: 0),
-                                                  itemBuilder: (context, _) =>
-                                                      SizedBox(
-                                                          width: 30,
-                                                          child: Icon(
-                                                            Icons.star,
-                                                            color: Colors.amber,
-                                                            size: 20,
-                                                          )),
-                                                  onRatingUpdate: (rating) {
-                                                    print(rating);
-                                                  }),
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.only(top: 6),
-                                              child: Text(
-                                                "(${product!.products![index].rating})",
-                                                style: TextStyle(
-                                                    fontFamily: "Metropolis",
-                                                    fontSize: 14,
-                                                    color: Colors.red),
+                                    child: Card(
+                                      color: Color.fromARGB(255, 1, 23, 44),
+                                      // color: Color.fromARGB(255, 0, 10, 20),
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            width: 100,
+                                            height: 200,
+                                            // width: 120,
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(6),
+                                              child: Image.network(
+                                                "${product!.products![index].image}",
+                                                fit: BoxFit.fill,
                                               ),
                                             ),
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              right: 93.0, top: 6),
-                                          child: Text(
-                                            "${product!.products![index].price}",
-                                            style: TextStyle(
-                                                fontFamily: "Metropolis",
-                                                fontSize: 14,
-                                                color: Colors.red),
                                           ),
-                                        ),
-                                      ],
+                                          SizedBox(
+                                            width: 20,
+                                          ),
+                                          Column(
+                                            children: [
+                                              SizedBox(
+                                                width: 150,
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          top: 20),
+                                                  child: Text(
+                                                    maxLines: 1,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    "${product!.products![index].name}",
+                                                    style: TextStyle(
+                                                        fontFamily:
+                                                            "Metropolis",
+                                                        fontSize: 16,
+                                                        // fontWeight: FontWeight.bold,
+                                                        color: Colors.white),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 150,
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          top: 6),
+                                                  child: Text(
+                                                    maxLines: 1,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    "${product!.products![index].description}",
+                                                    style: TextStyle(
+                                                        fontFamily:
+                                                            "Metropolis",
+                                                        fontSize: 11,
+                                                        color: Colors.grey),
+                                                  ),
+                                                ),
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            right: 0.0),
+                                                    child: RatingBar.builder(
+                                                        initialRating: 2,
+                                                        minRating: 1,
+                                                        itemSize: 26,
+                                                        direction:
+                                                            Axis.horizontal,
+                                                        allowHalfRating: true,
+                                                        itemPadding: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 0),
+                                                        itemBuilder: (context,
+                                                                _) =>
+                                                            SizedBox(
+                                                                width: 30,
+                                                                child: Icon(
+                                                                  Icons.star,
+                                                                  color: Colors
+                                                                      .amber,
+                                                                  size: 20,
+                                                                )),
+                                                        onRatingUpdate:
+                                                            (rating) {
+                                                          print(rating);
+                                                        }),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            top: 6),
+                                                    child: Text(
+                                                      "(${product!.products![index].rating})",
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              "Metropolis",
+                                                          fontSize: 14,
+                                                          color: Colors.red),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 93.0, top: 6),
+                                                child: Text(
+                                                  "${product!.products![index].price}",
+                                                  style: TextStyle(
+                                                      fontFamily: "Metropolis",
+                                                      fontSize: 14,
+                                                      color: Colors.red),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
-                          ),
-                        ],
-                      );
-                    }),
+                          );
+                        }),
               ),
             ],
           ),

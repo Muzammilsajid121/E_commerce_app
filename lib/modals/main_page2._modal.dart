@@ -1,31 +1,31 @@
 import 'dart:convert';
 
-Welcome welcomeFromJson(String str) => Welcome.fromJson(json.decode(str));
+Welcome1 welcome1FromJson(String str) => Welcome1.fromJson(json.decode(str));
 
-String welcomeToJson(Welcome data) => json.encode(data.toJson());
+String welcome1ToJson(Welcome1 data) => json.encode(data.toJson());
 
-class Welcome {
-  List<Product>? products;
+class Welcome1 {
+  List<Product1>? productss;
 
-  Welcome({
-    this.products,
+  Welcome1({
+    this.productss,
   });
 
-  factory Welcome.fromJson(Map<String, dynamic> json) => Welcome(
-        products: json["products"] == null
+  factory Welcome1.fromJson(Map<String, dynamic> json) => Welcome1(
+        productss: json["products"] == null
             ? []
-            : List<Product>.from(
-                json["products"]!.map((x) => Product.fromJson(x))),
+            : List<Product1>.from(
+                json["products"]!.map((x) => Product1.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
-        "products": products == null
+        "products": productss == null
             ? []
-            : List<dynamic>.from(products!.map((x) => x.toJson())),
+            : List<dynamic>.from(productss!.map((x) => x.toJson())),
       };
 }
 
-class Product {
+class Product1 {
   String? id;
   Category? category;
   Category? tag;
@@ -38,7 +38,7 @@ class Product {
   DateTime? dateModified;
   DateTime? dateCreated;
 
-  Product({
+  Product1({
     this.id,
     this.category,
     this.tag,
@@ -52,7 +52,7 @@ class Product {
     this.dateCreated,
   });
 
-  factory Product.fromJson(Map<String, dynamic> json) => Product(
+  factory Product1.fromJson(Map<String, dynamic> json) => Product1(
         id: json["id"],
         category: json["category"] == null
             ? null
