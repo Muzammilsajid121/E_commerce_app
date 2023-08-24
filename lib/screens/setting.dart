@@ -225,18 +225,18 @@ class BottomSheetContent extends StatelessWidget {
       // width: double.infinity,
       // height: 500,
       color: Color(0xff1E1F28),
-      child: Column(
-        children: [
-          Text(
-            "Password Change",
-            style: TextStyle(fontSize: 18, color: Colors.white),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: SizedBox(
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            Text(
+              "Password Change",
+              style: TextStyle(fontSize: 18, color: Colors.white),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            SizedBox(
               height: 45,
               child: TextField(
                 style: TextStyle(color: Colors.white),
@@ -262,24 +262,18 @@ class BottomSheetContent extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 0.0),
-            child: Text(
+            SizedBox(
+              height: 8,
+            ),
+            Text(
               "Forgot Password?",
               style: TextStyle(
                   fontSize: 14, color: Colors.grey, fontFamily: "Metropolis"),
             ),
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: SizedBox(
+            SizedBox(
+              height: 8,
+            ),
+            SizedBox(
               height: 45,
               child: TextField(
                 style: TextStyle(color: Colors.white),
@@ -305,13 +299,10 @@ class BottomSheetContent extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: SizedBox(
+            SizedBox(
+              height: 16,
+            ),
+            SizedBox(
               height: 45,
               child: TextField(
                 style: TextStyle(color: Colors.white),
@@ -337,13 +328,10 @@ class BottomSheetContent extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 12,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 30.0),
-            child: SizedBox(
+            SizedBox(
+              height: 16,
+            ),
+            SizedBox(
               width: 320,
               height: 50,
               //wrap elevated button with sizedBox widget
@@ -373,8 +361,8 @@ class BottomSheetContent extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

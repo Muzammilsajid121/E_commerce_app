@@ -182,7 +182,7 @@ class OrderDetail extends StatelessWidget {
                 //Bag Order cards
                 InkWell(
                   //
-                  //
+                  //Bottom Sheet
                   onTap: () {
                     showModalBottomSheet(
                         //Bottom Sheet Designing
@@ -195,13 +195,15 @@ class OrderDetail extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    "Order Information",
-                                    style:
-                                        Theme.of(context).textTheme.bodyMedium,
+                                  Center(
+                                    child: Text(
+                                      "Order Information",
+                                      style:
+                                          Theme.of(context).textTheme.bodyLarge,
+                                    ),
                                   ),
-                                  SizedBox(
-                                    height: 8,
+                                  const SizedBox(
+                                    height: 16,
                                   ),
                                   Row(
                                     children: [
@@ -222,7 +224,7 @@ class OrderDetail extends StatelessWidget {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 8,
+                                    height: 16,
                                   ),
 
                                   //2nd Row
@@ -244,7 +246,7 @@ class OrderDetail extends StatelessWidget {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 8,
+                                    height: 14,
                                   ),
                                   //3rd row
                                   Row(
@@ -265,7 +267,7 @@ class OrderDetail extends StatelessWidget {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 8,
+                                    height: 14,
                                   ),
                                   //4th Row
                                   Row(
@@ -286,7 +288,7 @@ class OrderDetail extends StatelessWidget {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 8,
+                                    height: 14,
                                   ),
                                   //5th Row
                                   Row(
@@ -307,7 +309,7 @@ class OrderDetail extends StatelessWidget {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 10,
+                                    height: 18,
                                   ),
                                   //6th Row
                                   Row(

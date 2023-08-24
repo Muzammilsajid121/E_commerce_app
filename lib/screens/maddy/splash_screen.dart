@@ -1,5 +1,4 @@
-// import 'package:e_commerce_app/screens/maddy/forgot_password.dart';
-import 'package:e_commerce_app/screens/maddy/login_screen.dart';
+import 'package:lottie/lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commerce_app/screens/maddy/sign_up.dart';
 
@@ -18,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 2), SwitchToSignUp);
+    Future.delayed(const Duration(seconds: 3), SwitchToSignUp);
     super.initState();
   }
 
@@ -27,8 +26,23 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
-        child: Image.asset('assets/io.png'),
-      ),
+          // child: Image.asset('assets/io.png'),
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "E-Commerce App",
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge
+                ?.copyWith(color: Colors.purple),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Lottie.asset('assets/anime.json', height: 300, width: 250),
+        ],
+      )),
     );
   }
 }

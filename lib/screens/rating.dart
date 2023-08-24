@@ -17,9 +17,15 @@ class Rating extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Rating&Reviews",
-                style: Theme.of(context).textTheme.titleLarge,
+              // SizedBox(
+              //   height: 20,
+              // ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30.0),
+                child: Text(
+                  "Rating&Reviews",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -50,7 +56,7 @@ class Rating extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(25.0),
                   child: Container(
-                    height: 250,
+                    height: 330,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: Color(0xff2A2C36),
@@ -120,121 +126,117 @@ class Rating extends StatelessWidget {
               ),
 
 //Review Button
-              Padding(
-                padding: const EdgeInsets.only(left: 0),
-                child: Center(
-                  child: InkWell(
-                    child: Container(
-                      height: 36,
-                      width: 130,
-                      decoration: BoxDecoration(
-                        color: Color(0xffEF3651),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.edit,
-                            color: Colors.white,
-                            size: 16,
-                          ),
-                          Text(
-                            "Write a review",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodySmall
-                                ?.copyWith(color: Colors.white),
-                          )
-                        ],
-                      ),
+              Center(
+                child: InkWell(
+                  child: Container(
+                    height: 36,
+                    width: 170,
+                    decoration: BoxDecoration(
+                      color: Color(0xffEF3651),
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    //
-                    //Modal Bottom Sheet on Button
-                    onTap: () {
-                      showModalBottomSheet<void>(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return Container(
-                            height: 800,
-                            width: double.infinity,
-                            color: Color(0xff1E1F28),
-                            //
-                            child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  //
-                                  Text(
-                                    "What is you rate?",
-                                    style:
-                                        Theme.of(context).textTheme.titleMedium,
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  //Stars
-
-                                  //
-                                  Text(
-                                    "Please share your opinion\n       about the product ",
-                                    style:
-                                        Theme.of(context).textTheme.bodyMedium,
-                                  ),
-
-                                  //
-                                  //Container
-                                  Center(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(20.0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          color: Color(0xff2A2C36),
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                        ),
-                                        height: 100,
-                                        width: double.infinity,
-                                      ),
-                                    ),
-                                  ),
-
-                                  //Botttom sheet Button
-                                  //Button
-                                  SizedBox(
-                                    width: 333,
-                                    height: 48,
-                                    child: ElevatedButton(
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.red,
-                                        side: BorderSide(
-                                            color: Colors.white, width: 1),
-                                      ),
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (BuildContext context) {
-                                              return Navigation();
-                                            },
-                                          ),
-                                        );
-                                      },
-
-                                      //chi;d of elevated
-                                      child: Text(
-                                        "SEND REVIEW",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyMedium,
-                                      ),
-                                    ),
-                                  ),
-                                ]),
-                          );
-                        },
-                      );
-                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.edit,
+                          color: Colors.white,
+                          size: 16,
+                        ),
+                        Text(
+                          "Write a review",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodySmall
+                              ?.copyWith(color: Colors.white),
+                        )
+                      ],
+                    ),
                   ),
+                  //
+                  //Modal Bottom Sheet on Button
+                  onTap: () {
+                    showModalBottomSheet<void>(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Container(
+                          height: 800,
+                          width: double.infinity,
+                          color: Color(0xff1E1F28),
+                          //
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                //
+                                Text(
+                                  "What is you rate?",
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium,
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                //Stars
+
+                                //
+                                Text(
+                                  "Please share your opinion\n       about the product ",
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+
+                                //
+                                //Container
+                                Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Color(0xff2A2C36),
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                      height: 100,
+                                      width: double.infinity,
+                                    ),
+                                  ),
+                                ),
+
+                                //Botttom sheet Button
+                                //Button
+                                SizedBox(
+                                  width: 333,
+                                  height: 48,
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.red,
+                                      side: BorderSide(
+                                          color: Colors.white, width: 1),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (BuildContext context) {
+                                            return Navigation();
+                                          },
+                                        ),
+                                      );
+                                    },
+
+                                    //chi;d of elevated
+                                    child: Text(
+                                      "SEND REVIEW",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                        );
+                      },
+                    );
+                  },
                 ),
               ),
             ],

@@ -1,118 +1,6 @@
 import 'package:e_commerce_app/screens/checkout.dart';
 import 'package:flutter/material.dart';
 
-// class OrderCard extends StatelessWidget {
-//   final String imageAssetPath;
-//   const OrderCard({required this.imageAssetPath, Key? key}) : super(key: key);
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: const EdgeInsets.all(20.0),
-//       child: Row(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: [
-//           Image.asset(imageAssetPath),
-
-//           //2nd
-//           Center(
-//             child: Container(
-//               width: 250,
-//               height: 105,
-//               decoration: const BoxDecoration(
-//                 //to radius specific side of container
-//                 borderRadius: BorderRadius.only(
-//                     bottomRight: Radius.circular(12),
-//                     topRight: Radius.circular(12)),
-//                 color: Color(0xff2A2C36),
-//               ),
-//               child: Padding(
-//                 padding: const EdgeInsets.symmetric(horizontal: 6),
-//                 child: Column(
-//                   crossAxisAlignment: CrossAxisAlignment.start,
-//                   children: [
-//                     Text(
-//                       "Pullover",
-//                       style: Theme.of(context).textTheme.bodyMedium,
-//                     ),
-//                     SizedBox(
-//                       height: 5,
-//                     ),
-//                     Text(
-//                       "Mango",
-//                       style: Theme.of(context).textTheme.bodySmall,
-//                     ),
-//                     SizedBox(
-//                       height: 8,
-//                     ),
-//                     Row(
-//                       children: [
-//                         Text(
-//                           "Color:",
-//                           style: Theme.of(context).textTheme.bodySmall,
-//                         ),
-//                         Text(
-//                           "Gray",
-//                           style: Theme.of(context)
-//                               .textTheme
-//                               .bodySmall
-//                               ?.copyWith(color: Colors.white),
-//                         ),
-//                         SizedBox(
-//                           width: 20,
-//                         ),
-//                         Text(
-//                           "Size:",
-//                           style: Theme.of(context).textTheme.bodySmall,
-//                         ),
-//                         Text(
-//                           "L",
-//                           style: Theme.of(context)
-//                               .textTheme
-//                               .bodySmall
-//                               ?.copyWith(color: Colors.white),
-//                         ),
-//                       ],
-//                     ),
-//                     SizedBox(
-//                       height: 8,
-//                     ),
-//                     Row(
-//                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                       children: [
-//                         Row(
-//                           children: [
-//                             Text(
-//                               "Units:",
-//                               style: Theme.of(context).textTheme.bodySmall,
-//                             ),
-//                             Text(
-//                               "1",
-//                               style: Theme.of(context).textTheme.bodyMedium,
-//                             ),
-//                           ],
-//                         ),
-//                         //
-//                         Row(
-//                           children: [
-//                             Text(
-//                               "51\$",
-//                               style: Theme.of(context).textTheme.bodyMedium,
-//                             ),
-//                           ],
-//                         ),
-//                       ],
-//                     )
-//                   ],
-//                 ),
-//               ),
-//             ),
-//           )
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 //////////
 ///
 class OrderCard extends StatelessWidget {
@@ -253,19 +141,20 @@ class MyBag extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        actions: const [
-          Padding(
-            padding: const EdgeInsets.only(right: 50),
-            child: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-          )
-        ],
-        foregroundColor: Colors.transparent,
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.black,
+      //   actions: const [
+      //     Padding(
+      //       padding: const EdgeInsets.only(right: 50),
+      //       child: Icon(
+      //         Icons.search,
+      //         color: Colors.white,
+      //       ),
+      //     )
+      //   ],
+      //   foregroundColor: Colors.transparent,
+      //   elevation: 0,
+      // ),
       //
       body: Container(
         width: double.infinity,
@@ -276,9 +165,12 @@ class MyBag extends StatelessWidget {
               // mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(
+                  height: 45,
+                ),
                 Text(
                   "My Bag",
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(
                   height: 12,

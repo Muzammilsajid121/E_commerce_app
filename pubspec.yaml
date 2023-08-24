@@ -43,6 +43,7 @@ dependencies:
   http:
   flutter_rating_stars: ^1.0.3+4
   flutter_rating_bar: ^4.0.1
+  lottie: ^2.6.0
 
 
 

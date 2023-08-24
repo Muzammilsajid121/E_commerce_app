@@ -88,9 +88,11 @@ class _CatalogOneState extends State<CatalogOne> {
                       child: Column(
                         children: [
                           TabBar(
-                            indicator: null,
+                            indicatorColor: Colors.transparent,
+                            dividerColor: Colors.transparent,
+                            // indicator: null,
                             automaticIndicatorColorAdjustment: false,
-                            indicatorWeight: 0.1,
+                            // indicatorWeight: 0.1,
                             isScrollable: true, // Enable scrolling for tabs
                             labelColor:
                                 Colors.red, // Set selected tab text color
@@ -102,7 +104,7 @@ class _CatalogOneState extends State<CatalogOne> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(16)),
                                 width: 100,
-                                height: 25,
+                                height: 30,
                                 alignment: Alignment.center,
                                 child: Text('t-shirts'),
                               ),
@@ -111,7 +113,7 @@ class _CatalogOneState extends State<CatalogOne> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(16)),
                                 width: 100,
-                                height: 25,
+                                height: 30,
                                 alignment: Alignment.center,
                                 child: Text('tops'),
                               ),
@@ -120,7 +122,7 @@ class _CatalogOneState extends State<CatalogOne> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(16)),
                                 width: 100,
-                                height: 25,
+                                height: 30,
                                 alignment: Alignment.center,
                                 child: Text('sleeveless'),
                               ),
@@ -129,7 +131,7 @@ class _CatalogOneState extends State<CatalogOne> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(16)),
                                 width: 100,
-                                height: 25,
+                                height: 30,
                                 alignment: Alignment.center,
                                 child: Text('blouses'),
                               ),
@@ -138,7 +140,7 @@ class _CatalogOneState extends State<CatalogOne> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(16)),
                                 width: 100,
-                                height: 25,
+                                height: 30,
                                 alignment: Alignment.center,
                                 child: Text('prexy'),
                               ),

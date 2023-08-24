@@ -24,11 +24,6 @@ import 'screens/producr_card.dart';
 import 'screens/rating.dart';
 import 'screens/stars_rating.dart';
 import 'screens/success.dart';
-// import 'screens/order_details.dart';
-// import 'screens/my_orders.dart';
-// import 'screens/setting.dart';
-
-//import 'screens/finding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -64,19 +59,14 @@ class MyApp extends StatelessWidget {
             //Body Large
             bodyLarge: GoogleFonts.dmSans(fontSize: 18, color: Colors.white),
             //title Medium
-            titleMedium: GoogleFonts.metrophobic(
+            titleMedium: GoogleFonts.montserrat(
                 fontSize: 24, color: Colors.white, fontWeight: FontWeight.w700),
             //title Large
-            titleLarge: GoogleFonts.metrophobic(
+            titleLarge: GoogleFonts.montserrat(
                 fontSize: 34,
                 fontWeight: FontWeight.w700,
                 color: Colors.white)),
 
-        //APPBAR THEME
-        appBarTheme: AppBarTheme(
-          color: Colors.transparent,
-          elevation: 0,
-        ),
         //
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,

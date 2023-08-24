@@ -11,6 +11,7 @@ class CheckOut extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         title: Text(
           "Checkout",
           style: Theme.of(context).textTheme.bodyMedium,
@@ -120,7 +121,7 @@ class CheckOut extends StatelessWidget {
                                     //
                                     //
                                     Padding(
-                                      padding: const EdgeInsets.only(top: 16),
+                                      padding: const EdgeInsets.only(top: 10),
                                       child: Text(
                                         "Add New Card",
                                         style: TextStyle(
@@ -139,7 +140,7 @@ class CheckOut extends StatelessWidget {
                                         color: Color(0xff2A2C36),
                                         borderRadius: BorderRadius.circular(3),
                                       ),
-                                      height: 50,
+                                      height: 60,
                                       width: double.infinity,
                                       child: ListTile(
                                         title: Text(
@@ -159,7 +160,7 @@ class CheckOut extends StatelessWidget {
                                         color: Color(0xff2A2C36),
                                         borderRadius: BorderRadius.circular(3),
                                       ),
-                                      height: 50,
+                                      height: 60,
                                       width: double.infinity,
                                       child: ListTile(
                                         title: Text(

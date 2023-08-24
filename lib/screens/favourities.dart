@@ -144,7 +144,8 @@ class Favourite extends StatelessWidget {
     return Scaffold(
         backgroundColor: Color(0xff1E1F28),
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Color(0xff1E1F28),
+          foregroundColor: Colors.white,
           actions: [
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -166,8 +167,9 @@ class Favourite extends StatelessWidget {
                 Text("Favourites",
                     style: Theme.of(context).textTheme.titleLarge),
 
-                // Tabs
-                //Tabs
+                const SizedBox(
+                  height: 20,
+                ),
 
                 //Row
                 Row(
@@ -183,6 +185,9 @@ class Favourite extends StatelessWidget {
                     )
                   ],
                 ),
+                const SizedBox(
+                  height: 20,
+                ),
 
                 Expanded(
                   child: ListView(
@@ -190,9 +195,21 @@ class Favourite extends StatelessWidget {
                       //Catalog Cards
 
                       FavouriteCard(imageAssetPath: "assets/orderdetails2.png"),
+                      const SizedBox(
+                        height: 20,
+                      ),
                       FavouriteCard(imageAssetPath: "assets/orderdetails3.png"),
+                      const SizedBox(
+                        height: 20,
+                      ),
                       FavouriteCard(imageAssetPath: "assets/orderdetails4.png"),
+                      const SizedBox(
+                        height: 20,
+                      ),
                       FavouriteCard(imageAssetPath: "assets/orderdetails5.png"),
+                      const SizedBox(
+                        height: 20,
+                      ),
                       FavouriteCard(imageAssetPath: "assets/orderdetails1.png"),
                     ],
                     scrollDirection: Axis.vertical,

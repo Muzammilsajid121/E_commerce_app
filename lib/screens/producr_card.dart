@@ -108,7 +108,7 @@ class _ProductState extends State<Product_cat> {
                 ),
                 SizedBox(height: 16),
                 Padding(
-                  padding: const EdgeInsets.only(right: 150.0),
+                  padding: const EdgeInsets.only(right: 120.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -288,7 +288,7 @@ class _ProductState extends State<Product_cat> {
                 ),
                 SizedBox(height: 16),
                 Padding(
-                  padding: const EdgeInsets.only(right: 150.0),
+                  padding: const EdgeInsets.only(right: 120.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -372,8 +372,10 @@ class _ProductState extends State<Product_cat> {
                       // style: ElevatedButton.styleFrom(shadowColor: Colors.green),
                       child: Text(
                         'SAVE',
-                        style:
-                            TextStyle(fontFamily: "Metropolis", fontSize: 15),
+                        style: TextStyle(
+                            fontFamily: "Metropolis",
+                            fontSize: 15,
+                            color: Colors.white),
                       ),
                       style: ElevatedButton.styleFrom(
                         primary: Color.fromARGB(255, 230, 5, 65),
@@ -397,20 +399,16 @@ class _ProductState extends State<Product_cat> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 10, 20),
         elevation: 0,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.white,
-        ),
         title: SizedBox(
           width: 100,
           child: Padding(
-            padding: const EdgeInsets.only(left: 6.0, top: 4),
+            padding: const EdgeInsets.only(left: 0.0, top: 0),
             child: Text(
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               "${widget.product1.name}",
               style: TextStyle(
-                  fontFamily: "Metropolis", fontSize: 11, color: Colors.grey),
+                  fontFamily: "Metropolis", fontSize: 14, color: Colors.grey),
             ),
           ),
         ),
@@ -427,31 +425,63 @@ class _ProductState extends State<Product_cat> {
       ),
       backgroundColor: Color.fromARGB(255, 0, 10, 20),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: 450,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                        "${widget.product1.image}",
-                      ))),
-            ),
-            //ROW
-            //bottom body Part
-            const SizedBox(
-              height: 8,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 450,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                          "${widget.product1.image}",
+                        ))),
+              ),
+              //ROW
+              //bottom body Part
+              const SizedBox(
+                height: 8,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 58, 58, 63),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      height: 35,
+                      width: 135,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Size",
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                            IconButton(
+                                onPressed: () {
+                                  _showSizeModalBottomSheet();
+                                },
+                                icon: Icon(
+                                  Icons.arrow_drop_down,
+                                  color: Color(0xffABB4BD),
+                                ))
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  //2nd dropdown
+                  Container(
                     decoration: BoxDecoration(
                       color: Color.fromARGB(255, 58, 58, 63),
                       borderRadius: BorderRadius.circular(8),
@@ -464,12 +494,12 @@ class _ProductState extends State<Product_cat> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Size",
+                            "Color",
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
                           IconButton(
                               onPressed: () {
-                                _showSizeModalBottomSheet();
+                                _showColorModalBottomSheet();
                               },
                               icon: Icon(
                                 Icons.arrow_drop_down,
@@ -479,92 +509,56 @@ class _ProductState extends State<Product_cat> {
                       ),
                     ),
                   ),
-                ),
-                //2nd dropdown
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 58, 58, 63),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  height: 35,
-                  width: 135,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Color",
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
-                        IconButton(
-                            onPressed: () {
-                              _showColorModalBottomSheet();
-                            },
-                            icon: Icon(
-                              Icons.arrow_drop_down,
-                              color: Color(0xffABB4BD),
-                            ))
-                      ],
+                  //Add to favourite
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 63, 63, 66),
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                  ),
-                ),
-                //Add to favourite
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 63, 63, 66),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: IconButton(
-                      hoverColor: Colors.red,
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.favorite_border,
-                        color: Color(0xffABB4BD),
-                      )),
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            //Text Portion
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 9.0),
-                  child: Text(
+                    child: IconButton(
+                        hoverColor: Colors.red,
+                        focusColor: Colors.purple,
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.favorite_border,
+                          color: Color(0xffABB4BD),
+                        )),
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              //Text Portion
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
                     "${widget.product1.name}",
                     style: TextStyle(
                       fontFamily: "Metropolis",
-                      fontSize: 20,
+                      fontSize: 14,
+                      //yaha p msla h hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
                       color: Colors.white,
                     ),
                   ),
+                ],
+              ),
+              Text(
+                "\$ ${widget.product1.price}",
+                style: TextStyle(
+                  fontFamily: "Metropolis",
+                  fontSize: 20,
+                  color: Colors.white,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 9.0),
-                  child: Text(
-                    "\$ ${widget.product1.price}",
-                    style: TextStyle(
-                      fontFamily: "Metropolis",
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 2,
-            ),
-            //
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 9.0),
-                  child: RatingBar.builder(
+              ),
+              const SizedBox(
+                height: 2,
+              ),
+              //
+              Row(
+                children: [
+                  RatingBar.builder(
                       initialRating: 2,
                       minRating: 1,
                       itemSize: 26,
@@ -581,89 +575,82 @@ class _ProductState extends State<Product_cat> {
                       onRatingUpdate: (rating) {
                         print(rating);
                       }),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 6),
-                  child: Text(
+                  Text(
                     "(${widget.product1.rating})",
                     style: TextStyle(
                         fontFamily: "Metropolis",
                         fontSize: 14,
                         color: Colors.red),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            //
-            SizedBox(
-              width: 190,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 9.0, top: 4),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //
+              SizedBox(
+                width: 330,
                 child: Text(
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                   "${widget.product1.description}",
                   style: TextStyle(
                       fontFamily: "Metropolis",
-                      fontSize: 11,
+                      fontSize: 12,
                       color: Colors.grey),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 12,
-            ),
+              const SizedBox(
+                height: 12,
+              ),
 
-            //Button
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 30.0),
-                child: SizedBox(
-                  width: 430,
-                  height: 50,
-                  //wrap elevated button with sizedBox widget
-                  child: ElevatedButton(
-                    onPressed: () {
-                      // setState(() {
-                      //   email = emailcontroller.text;
-                      // });
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (BuildContext context) {
-                      //       return Home();
-                      //     },
-                      //   ),
-                      // );
-                    },
-                    // style: ElevatedButton.styleFrom(shadowColor: Colors.green),
-                    child: Text(
-                      'ADD TO CART',
-                      style: TextStyle(
-                          fontFamily: "Metropolis",
-                          fontSize: 15,
-                          color: Colors.white),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromARGB(255, 230, 5, 65),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+              //Button
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 30.0),
+                  child: SizedBox(
+                    width: 430,
+                    height: 50,
+                    //wrap elevated button with sizedBox widget
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // setState(() {
+                        //   email = emailcontroller.text;
+                        // });
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (BuildContext context) {
+                        //       return Home();
+                        //     },
+                        //   ),
+                        // );
+                      },
+                      // style: ElevatedButton.styleFrom(shadowColor: Colors.green),
+                      child: Text(
+                        'ADD TO CART',
+                        style: TextStyle(
+                            fontFamily: "Metropolis",
+                            fontSize: 15,
+                            color: Colors.white),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 230, 5, 65),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              child: InkWell(
+              SizedBox(
+                height: 25,
+              ),
+              Divider(
+                color: Colors.grey,
+              ),
+              InkWell(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -671,16 +658,13 @@ class _ProductState extends State<Product_cat> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(right: 340),
-                            child: Text(
-                              'Shipping info',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: "Metropolis",
-                              ),
+                          Text(
+                            'Shipping info',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Metropolis",
                             ),
                           ),
                         ],
@@ -694,14 +678,10 @@ class _ProductState extends State<Product_cat> {
                   ],
                 ),
               ),
-            ),
-            Divider(
-              color: Colors.grey,
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              child: InkWell(
+              Divider(
+                color: Colors.grey,
+              ),
+              InkWell(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -709,16 +689,13 @@ class _ProductState extends State<Product_cat> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(right: 340),
-                            child: Text(
-                              'Support',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: "Metropolis",
-                              ),
+                          Text(
+                            'Support',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Metropolis",
                             ),
                           ),
                         ],
@@ -732,140 +709,140 @@ class _ProductState extends State<Product_cat> {
                   ],
                 ),
               ),
-            ),
-            Divider(
-              color: Colors.grey,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 16.0),
-              child: Text(
-                'You can also like this',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "Metropolis",
+              Divider(
+                color: Colors.grey,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 16.0),
+                child: Text(
+                  'You can also like this',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Metropolis",
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            Container(
-              height: 290,
-              // width: 1000,
-              child: welcome2 == null
-                  ? Center(child: CircularProgressIndicator())
-                  : ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: welcome2!.products!.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return InkWell(
-                          onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) =>
-                                  Rating(product3: welcome2!.products![index]),
-                            ));
-                          },
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 160,
-                                width: 150,
-                                decoration: BoxDecoration(
-                                  //  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
-                                child: Card(
-                                  // color: Color.fromARGB(255, 0, 10, 20),
-                                  child: Container(
-                                    // width: 120,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(16),
-                                      child: Image.network(
-                                        "${welcome2!.products![index].image}",
-                                        fit: BoxFit.fill,
+              SizedBox(
+                height: 16,
+              ),
+              Container(
+                height: 290,
+                // width: 1000,
+                child: welcome2 == null
+                    ? Center(child: CircularProgressIndicator())
+                    : ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: welcome2!.products!.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Rating(
+                                    product3: welcome2!.products![index]),
+                              ));
+                            },
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  height: 160,
+                                  width: 150,
+                                  decoration: BoxDecoration(
+                                    //  color: Colors.black,
+                                    borderRadius: BorderRadius.circular(50),
+                                  ),
+                                  child: Card(
+                                    // color: Color.fromARGB(255, 0, 10, 20),
+                                    child: Container(
+                                      // width: 120,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(16),
+                                        child: Image.network(
+                                          "${welcome2!.products![index].image}",
+                                          fit: BoxFit.fill,
+                                        ),
                                       ),
                                     ),
-                                  ),
 
-                                  // title:
-                                  // ),
+                                    // title:
+                                    // ),
+                                  ),
                                 ),
-                              ),
-                              RatingBar.builder(
-                                  initialRating: 2,
-                                  minRating: 1,
-                                  itemSize: 30,
-                                  direction: Axis.horizontal,
-                                  allowHalfRating: true,
-                                  itemPadding:
-                                      EdgeInsets.symmetric(horizontal: 0),
-                                  itemBuilder: (context, _) => SizedBox(
-                                      width: 30,
-                                      child: Icon(
-                                        Icons.star,
-                                        color: Colors.amber,
-                                        size: 20,
-                                      )),
-                                  onRatingUpdate: (rating) {
-                                    print(rating);
-                                  }),
-                              SizedBox(
-                                width: 150,
-                                child: Padding(
+                                RatingBar.builder(
+                                    initialRating: 2,
+                                    minRating: 1,
+                                    itemSize: 30,
+                                    direction: Axis.horizontal,
+                                    allowHalfRating: true,
+                                    itemPadding:
+                                        EdgeInsets.symmetric(horizontal: 0),
+                                    itemBuilder: (context, _) => SizedBox(
+                                        width: 30,
+                                        child: Icon(
+                                          Icons.star,
+                                          color: Colors.amber,
+                                          size: 20,
+                                        )),
+                                    onRatingUpdate: (rating) {
+                                      print(rating);
+                                    }),
+                                SizedBox(
+                                  width: 150,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 6.0, top: 4),
+                                    child: Text(
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      "${welcome2!.products![index].description}",
+                                      style: TextStyle(
+                                          fontFamily: "Metropolis",
+                                          fontSize: 11,
+                                          color: Colors.grey),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 150,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 6.0, top: 4),
+                                    child: Text(
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      "${welcome2!.products![index].name}",
+                                      style: TextStyle(
+                                          fontFamily: "Metropolis",
+                                          fontSize: 16,
+                                          // fontWeight: FontWeight.bold,
+                                          color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
                                   padding:
                                       const EdgeInsets.only(left: 6.0, top: 4),
                                   child: Text(
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    "${welcome2!.products![index].description}",
+                                    "${welcome2!.products![index].price}",
                                     style: TextStyle(
                                         fontFamily: "Metropolis",
-                                        fontSize: 11,
-                                        color: Colors.grey),
+                                        fontSize: 14,
+                                        color: Colors.red),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: 150,
-                                child: Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 6.0, top: 4),
-                                  child: Text(
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    "${welcome2!.products![index].name}",
-                                    style: TextStyle(
-                                        fontFamily: "Metropolis",
-                                        fontSize: 16,
-                                        // fontWeight: FontWeight.bold,
-                                        color: Colors.white),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 6.0, top: 4),
-                                child: Text(
-                                  "${welcome2!.products![index].price}",
-                                  style: TextStyle(
-                                      fontFamily: "Metropolis",
-                                      fontSize: 14,
-                                      color: Colors.red),
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      }),
-            ),
-          ],
+                              ],
+                            ),
+                          );
+                        }),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -42,10 +42,6 @@ class _Category2State extends State<Category2> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 10, 20),
         elevation: 0,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.white,
-        ),
         title: Text(
           'Categories',
           style: TextStyle(
@@ -73,7 +69,7 @@ class _Category2State extends State<Category2> {
               child: Padding(
                 padding: const EdgeInsets.only(top: 30.0),
                 child: SizedBox(
-                  width: 430,
+                  width: 400,
                   height: 50,
                   //wrap elevated button with sizedBox widget
                   child: ElevatedButton(
@@ -107,18 +103,18 @@ class _Category2State extends State<Category2> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 356.0, top: 10),
+              padding: const EdgeInsets.only(right: 0.0, top: 10),
               child: Text(
                 'Choose category',
                 style: TextStyle(
-                    fontFamily: "Metropolis", fontSize: 14, color: Colors.grey),
+                    fontFamily: "Metropolis", fontSize: 18, color: Colors.grey),
               ),
             ),
             SizedBox(
               height: 13,
             ),
             Container(
-              height: 510,
+              height: 550,
               child: categry == null
                   ? Center(child: CircularProgressIndicator())
                   : ListView.builder(
