@@ -78,7 +78,6 @@ class _MainPage2State extends State<MainPage2> {
                                   .titleLarge
                                   ?.copyWith(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 48,
                                       color: Colors.white),
                             ),
                           ],

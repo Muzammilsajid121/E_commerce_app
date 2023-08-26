@@ -240,7 +240,8 @@ class _Add_Shopping_AddressState extends State<Add_Shopping_Address> {
                         color: Colors.white),
                   ),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
+                    backgroundColor: Color(0xffEF3651),
+                    side: BorderSide(color: Colors.white, width: 2),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),

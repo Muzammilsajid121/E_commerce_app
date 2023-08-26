@@ -42,8 +42,8 @@ class Success extends StatelessWidget {
                 height: 48,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    side: BorderSide(color: Colors.white, width: 1),
+                    backgroundColor: Color(0xffEF3651),
+                    side: BorderSide(color: Colors.white, width: 2),
                   ),
                   onPressed: () {
                     Navigator.push(

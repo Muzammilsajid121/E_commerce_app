@@ -155,8 +155,8 @@ class OrderDetail extends StatelessWidget {
             ),
           )
         ],
-        foregroundColor: Colors.transparent,
-        elevation: 0,
+        // foregroundColor: Colors.transparent,
+        // elevation: 0,
       ),
       //
 
@@ -337,9 +337,12 @@ class OrderDetail extends StatelessWidget {
                                         width: 150,
                                         child: ElevatedButton(
                                             style: ElevatedButton.styleFrom(
-                                                side: BorderSide(
-                                                    color: Colors.white),
-                                                backgroundColor: Colors.red),
+                                              backgroundColor:
+                                                  Color(0xffEF3651),
+                                              side: BorderSide(
+                                                  color: Colors.white,
+                                                  width: 2),
+                                            ),
                                             onPressed: () {
                                               Navigator.push(
                                                 context,
@@ -387,77 +390,6 @@ class OrderDetail extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-
-                //Promo Code Text Field
-                // Center(
-                //   child: SizedBox(
-                //     // width: 343,
-                //     height: 36,
-                //     child: TextField(
-                //       decoration: InputDecoration(
-                //           fillColor: Color(0xff2A2C36),
-                //           filled: true,
-                //           hintText: "Enter your promo code",
-                //           hintStyle: Theme.of(context).textTheme.bodySmall,
-                //           suffixIcon: Icon(Icons.arrow_forward),
-                //           border: OutlineInputBorder()),
-                //     ),
-                //   ),
-                // ),
-                //
-                // const SizedBox(
-                //   height: 20,
-                // ),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //   children: [
-                //     Text(
-                //       "Total amount::",
-                //       style: Theme.of(context).textTheme.bodySmall,
-                //     ),
-                //     Text(
-                //       "124\$",
-                //       style: Theme.of(context)
-                //           .textTheme
-                //           .bodySmall
-                //           ?.copyWith(color: Colors.white),
-                //     ),
-                //   ],
-                // ),
-                // const SizedBox(
-                //   height: 16,
-                // ),
-                //Button
-                // Center(
-                //   child: SizedBox(
-                //     width: 343,
-                //     height: 48,
-                //     child: ElevatedButton(
-                //       style: ElevatedButton.styleFrom(
-                //         elevation: 1,
-                //         backgroundColor: Colors.red,
-                //         side: BorderSide(color: Colors.white, width: 1),
-                //       ),
-                //       onPressed: () {
-                //         // setState(() {});
-                //         Navigator.push(
-                //           context,
-                //           MaterialPageRoute(
-                //             builder: (BuildContext context) {
-                //               return CheckOut();
-                //             },
-                //           ),
-                //         );
-                //       },
-
-                //       //chi;d of elevated
-                //       child: Text(
-                //         "CHECK OUT",
-                //         style: Theme.of(context).textTheme.bodySmall,
-                //       ),
-                //     ),
-                //   ),
-                // ),
               ],
             ),
           ),

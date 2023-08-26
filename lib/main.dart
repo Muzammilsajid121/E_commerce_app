@@ -24,6 +24,7 @@ import 'screens/producr_card.dart';
 import 'screens/rating.dart';
 import 'screens/stars_rating.dart';
 import 'screens/success.dart';
+import 'screens/producr_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -68,10 +69,14 @@ class MyApp extends StatelessWidget {
                 color: Colors.white)),
 
         //
+        appBarTheme: AppBarTheme(
+            backgroundColor: Colors.transparent, foregroundColor: Colors.white),
+
+        //
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashScreen(),
+      home: Category2(),
     );
   }
 }

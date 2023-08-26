@@ -108,7 +108,7 @@ class _ProductState extends State<Product_cat> {
                 ),
                 SizedBox(height: 16),
                 Padding(
-                  padding: const EdgeInsets.only(right: 120.0),
+                  padding: const EdgeInsets.only(right: 145.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -198,7 +198,8 @@ class _ProductState extends State<Product_cat> {
                             color: Colors.white),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 230, 5, 65),
+                        backgroundColor: Color(0xffEF3651),
+                        side: BorderSide(color: Colors.white, width: 2),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -288,7 +289,7 @@ class _ProductState extends State<Product_cat> {
                 ),
                 SizedBox(height: 16),
                 Padding(
-                  padding: const EdgeInsets.only(right: 120.0),
+                  padding: const EdgeInsets.only(right: 145.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -378,7 +379,8 @@ class _ProductState extends State<Product_cat> {
                             color: Colors.white),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 230, 5, 65),
+                        backgroundColor: Color(0xffEF3651),
+                        side: BorderSide(color: Colors.white, width: 2),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -417,7 +419,7 @@ class _ProductState extends State<Product_cat> {
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: Padding(
-              padding: const EdgeInsets.only(left: 40.0),
+              padding: const EdgeInsets.only(left: 20.0),
               child: Icon(Icons.share),
             ),
           ),
@@ -635,7 +637,8 @@ class _ProductState extends State<Product_cat> {
                             color: Colors.white),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 230, 5, 65),
+                        backgroundColor: Color(0xffEF3651),
+                        side: BorderSide(color: Colors.white, width: 2),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),

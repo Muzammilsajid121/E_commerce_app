@@ -41,6 +41,7 @@ class _Category2State extends State<Category2> {
       backgroundColor: Color.fromARGB(255, 0, 10, 20),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 10, 20),
+        foregroundColor: Colors.white,
         elevation: 0,
         title: Text(
           'Categories',
@@ -53,11 +54,8 @@ class _Category2State extends State<Category2> {
         centerTitle: true,
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 16.0),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 40.0),
-              child: Icon(Icons.search),
-            ),
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(Icons.search),
           ),
         ],
       ),
@@ -69,7 +67,7 @@ class _Category2State extends State<Category2> {
               child: Padding(
                 padding: const EdgeInsets.only(top: 30.0),
                 child: SizedBox(
-                  width: 400,
+                  width: 380,
                   height: 50,
                   //wrap elevated button with sizedBox widget
                   child: ElevatedButton(
@@ -93,7 +91,8 @@ class _Category2State extends State<Category2> {
                           color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Color.fromARGB(255, 230, 5, 65),
+                      backgroundColor: Color(0xffEF3651),
+                      side: BorderSide(color: Colors.white, width: 2),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),

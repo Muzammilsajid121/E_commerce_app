@@ -354,7 +354,8 @@ class BottomSheetContent extends StatelessWidget {
                       color: Colors.white),
                 ),
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 230, 5, 65),
+                  backgroundColor: Color(0xffEF3651),
+                  side: BorderSide(color: Colors.white, width: 2),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),

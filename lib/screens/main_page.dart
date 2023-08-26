@@ -66,7 +66,7 @@ class _MainPageState extends State<MainPage> {
                                 .titleLarge
                                 ?.copyWith(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 48,
+                                    fontSize: 42,
                                     color: Colors.white),
                           ),
                           // Text(
@@ -105,7 +105,9 @@ class _MainPageState extends State<MainPage> {
                                       color: Colors.white),
                                 ),
                                 style: ElevatedButton.styleFrom(
-                                  primary: Color.fromARGB(255, 230, 5, 65),
+                                  backgroundColor: Color(0xffEF3651),
+                                  side:
+                                      BorderSide(color: Colors.white, width: 2),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   ),

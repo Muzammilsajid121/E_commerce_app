@@ -43,10 +43,6 @@ class _CatalogOneState extends State<CatalogOne> {
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 0, 10, 20),
           elevation: 0,
-          leading: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-          ),
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 16.0),

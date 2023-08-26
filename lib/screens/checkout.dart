@@ -98,7 +98,7 @@ class CheckOut extends StatelessWidget {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           elevation: 1,
-                          backgroundColor: Colors.red,
+                          backgroundColor: Color(0xffEF3651),
                           side: BorderSide(color: Colors.white, width: 1),
                         ),
 
@@ -108,11 +108,11 @@ class CheckOut extends StatelessWidget {
                         onPressed: () {
                           showModalBottomSheet(
                             context: context,
-                            // isScrollControlled:
-                            //     true, // This allows the content to scroll within the sheet
+                            isScrollControlled:
+                                true, // This allows the content to scroll within the sheet
                             builder: (BuildContext context) {
                               return Container(
-                                height: 500,
+                                height: 450,
                                 width: double.infinity,
                                 color: Color(0xff1E1F28),
                                 padding: EdgeInsets.all(15),
@@ -376,8 +376,8 @@ class CheckOut extends StatelessWidget {
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         elevation: 1,
-                        backgroundColor: Colors.red,
-                        side: BorderSide(color: Colors.white, width: 1),
+                        backgroundColor: Color(0xffEF3651),
+                        side: BorderSide(color: Colors.white, width: 2),
                       ),
                       onPressed: () {
                         Navigator.push(
