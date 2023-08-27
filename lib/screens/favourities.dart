@@ -144,8 +144,14 @@ class Favourite extends StatelessWidget {
     return Scaffold(
         backgroundColor: Color(0xff1E1F28),
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Color(0xff1E1F28),
-          foregroundColor: Colors.white,
+          // foregroundColor: Colors.white,
+          title: Text(
+            "Favourities",
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+          centerTitle: true,
           actions: [
             Padding(
               padding: const EdgeInsets.all(16.0),

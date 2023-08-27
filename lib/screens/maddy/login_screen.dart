@@ -63,14 +63,14 @@ class _LoginScreenState extends State<LoginScreenn> {
 
         //AppBar
         backgroundColor: Color.fromARGB(255, 0, 10, 20),
-        appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 0, 10, 20),
-          elevation: 0,
-          leading: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-          ),
-        ),
+        // appBar: AppBar(
+        //   backgroundColor: Color.fromARGB(255, 0, 10, 20),
+        //   elevation: 0,
+        //   leading: Icon(
+        //     Icons.arrow_back_ios,
+        //     color: Colors.white,
+        //   ),
+        // ),
         //
         body: SingleChildScrollView(
           child: Container(
@@ -84,6 +84,9 @@ class _LoginScreenState extends State<LoginScreenn> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(
+                      height: 45,
+                    ),
                     const Text(
                       'Login',
                       style: TextStyle(
@@ -125,7 +128,7 @@ class _LoginScreenState extends State<LoginScreenn> {
                       ),
                     ),
                     const SizedBox(
-                      height: 12,
+                      height: 22,
                     ),
 
                     //2nd
@@ -154,7 +157,7 @@ class _LoginScreenState extends State<LoginScreenn> {
                       ),
                     ),
                     const SizedBox(
-                      height: 12,
+                      height: 22,
                     ),
 
                     ///
@@ -182,7 +185,7 @@ class _LoginScreenState extends State<LoginScreenn> {
                       ],
                     ),
                     const SizedBox(
-                      height: 12,
+                      height: 22,
                     ),
 
                     //Elevated Button

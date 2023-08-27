@@ -70,13 +70,13 @@ class MyApp extends StatelessWidget {
 
         //
         appBarTheme: AppBarTheme(
-            backgroundColor: Colors.transparent, foregroundColor: Colors.white),
+            backgroundColor: Colors.black, foregroundColor: Colors.white),
 
         //
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Category2(),
+      home: SplashScreen(),
     );
   }
 }

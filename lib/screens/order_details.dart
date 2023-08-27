@@ -148,7 +148,7 @@ class OrderDetail extends StatelessWidget {
         centerTitle: true,
         actions: const [
           Padding(
-            padding: const EdgeInsets.only(right: 50),
+            padding: const EdgeInsets.only(right: 25),
             child: Icon(
               Icons.search,
               color: Colors.white,

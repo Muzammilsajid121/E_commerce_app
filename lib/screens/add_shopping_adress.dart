@@ -25,15 +25,15 @@ class _Add_Shopping_AddressState extends State<Add_Shopping_Address> {
         ),
         backgroundColor: Color.fromARGB(255, 0, 10, 20),
         elevation: 0,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.white,
-        ),
+        // leading: Icon(
+        //   Icons.arrow_back_ios,
+        //   color: Colors.white,
+        // ),
       ),
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(
-            height: 60,
+            height: 35,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -217,7 +217,7 @@ class _Add_Shopping_AddressState extends State<Add_Shopping_Address> {
             padding: const EdgeInsets.only(left: 0.0),
             child: Center(
               child: SizedBox(
-                width: 380,
+                width: 350,
                 height: 50,
                 //wrap elevated button with sizedBox widget
                 child: ElevatedButton(

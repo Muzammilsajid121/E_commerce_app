@@ -68,14 +68,10 @@ class _SignUPState extends State<SignUP> {
     return Scaffold(
         //AppBar
         backgroundColor: Color.fromARGB(255, 0, 10, 20),
-        appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 0, 10, 20),
-          elevation: 0,
-          leading: Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-          ),
-        ),
+        // appBar: AppBar(
+        //   backgroundColor: Color.fromARGB(255, 0, 10, 20),
+        //   elevation: 0,
+        // ),
         //
         body: SingleChildScrollView(
           child: Container(
@@ -87,6 +83,9 @@ class _SignUPState extends State<SignUP> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(
+                      height: 50,
+                    ),
                     Text(
                       'Sign up',
                       style: TextStyle(
@@ -186,7 +185,7 @@ class _SignUPState extends State<SignUP> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 30,
                     ),
 
                     //Account Already
@@ -211,7 +210,7 @@ class _SignUPState extends State<SignUP> {
                       ],
                     ),
                     const SizedBox(
-                      height: 12,
+                      height: 20,
                     ),
 
                     //Elevated Button

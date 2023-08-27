@@ -40,8 +40,9 @@ class _Category2State extends State<Category2> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 0, 10, 20),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 0, 10, 20),
-        foregroundColor: Colors.white,
+        // foregroundColor: Colors.white,
         elevation: 0,
         title: Text(
           'Categories',
@@ -52,6 +53,17 @@ class _Category2State extends State<Category2> {
           ),
         ),
         centerTitle: true,
+        //
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back),
+        //   onPressed: () {
+        //     // Replace 'YourScreenRoute' with the actual route you want to navigate back to.
+        //     Navigator.pop(
+        //         context, MaterialPageRoute(builder: (context) => MainPage()));
+        //   },
+        // ),
+
+        //
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),

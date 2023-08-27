@@ -16,6 +16,12 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 0, 10, 20),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(
+          "Profie",
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+        centerTitle: true,
         backgroundColor: Color.fromARGB(255, 0, 10, 20),
         elevation: 0,
         actions: [

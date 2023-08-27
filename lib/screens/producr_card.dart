@@ -108,7 +108,7 @@ class _ProductState extends State<Product_cat> {
                 ),
                 SizedBox(height: 16),
                 Padding(
-                  padding: const EdgeInsets.only(right: 145.0),
+                  padding: const EdgeInsets.only(right: 125.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -177,17 +177,17 @@ class _ProductState extends State<Product_cat> {
                     //wrap elevated button with sizedBox widget
                     child: ElevatedButton(
                       onPressed: () {
-                        // setState(() {
-                        //   email = emailcontroller.text;
-                        // });
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (BuildContext context) {
-                              return Card();
-                            },
-                          ),
-                        );
+                        // // setState(() {
+                        // //   email = emailcontroller.text;
+                        // // });
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (BuildContext context) {
+                        //       return Card();
+                        //     },
+                        //   ),
+                        // );
                       },
                       // style: ElevatedButton.styleFrom(shadowColor: Colors.green),
                       child: Text(
@@ -289,7 +289,7 @@ class _ProductState extends State<Product_cat> {
                 ),
                 SizedBox(height: 16),
                 Padding(
-                  padding: const EdgeInsets.only(right: 145.0),
+                  padding: const EdgeInsets.only(right: 125.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -332,7 +332,7 @@ class _ProductState extends State<Product_cat> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Size info",
+                        "Color info",
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -370,7 +370,6 @@ class _ProductState extends State<Product_cat> {
                         //   ),
                         // );
                       },
-                      // style: ElevatedButton.styleFrom(shadowColor: Colors.green),
                       child: Text(
                         'SAVE',
                         style: TextStyle(

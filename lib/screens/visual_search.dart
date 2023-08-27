@@ -45,7 +45,7 @@ class _VisualSearchState extends State<VisualSearch> {
             image: DecorationImage(
           fit: BoxFit.fill,
           image: AssetImage(
-            "assets/visual.png",
+            "assets/model.jpg",
           ),
         )),
 
@@ -85,7 +85,7 @@ class _VisualSearchState extends State<VisualSearch> {
               },
               child: Text(
                 "Take a Photo",
-                style: Theme.of(context).textTheme.bodySmall,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
           ),
@@ -93,29 +93,6 @@ class _VisualSearchState extends State<VisualSearch> {
           SizedBox(
             height: 14,
           ),
-
-          // //Button 2
-          // SizedBox(
-          //   height: 48,
-          //   width: 440,
-          //   child: ElevatedButton(
-          //     style: ElevatedButton.styleFrom(
-          //         backgroundColor: Colors.transparent,
-          //         side: BorderSide(color: Colors.white, width: 2)),
-          //     onPressed: () {
-          //       Navigator.of(context).push(
-          //           MaterialPageRoute(builder: (context) => FindindScreen()));
-          //       getImage(ImageSource.gallery);
-          //     },
-          //     child: Text(
-          //       "Upload an Image",
-          //       style: Theme.of(context).textTheme.bodySmall,
-          //     ),
-          //   ),
-          // ),
-          ///////////////////////////////
-          ///
-          // VisualSearch Screen
 
 // ...
 
@@ -141,7 +118,7 @@ class _VisualSearchState extends State<VisualSearch> {
               },
               child: Text(
                 "Upload an Image",
-                style: Theme.of(context).textTheme.bodySmall,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
           ),

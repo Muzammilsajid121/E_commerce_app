@@ -147,9 +147,12 @@ class MyOrders extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
+        // backgroundColor: Colors.black,
+
         actions: const [
           Padding(
-            padding: const EdgeInsets.only(right: 50),
+            padding: const EdgeInsets.only(right: 25),
             child: Icon(
               Icons.search,
               color: Colors.white,

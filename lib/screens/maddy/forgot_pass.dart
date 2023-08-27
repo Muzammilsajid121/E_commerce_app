@@ -21,10 +21,10 @@ class _ForgotPassState extends State<ForgotPass> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 0, 10, 20),
         elevation: 0,
-        leading: const Icon(
-          Icons.arrow_back_ios,
-          color: Colors.white,
-        ),
+        // leading: const Icon(
+        //   Icons.arrow_back_ios,
+        //   color: Colors.white,
+        // ),
       ),
 
       //
