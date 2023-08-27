@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 3), SwitchToSignUp);
+    Future.delayed(const Duration(seconds: 4), SwitchToSignUp);
     super.initState();
   }
 
@@ -30,17 +30,17 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // const SizedBox(
+          //   height: 10,
+          // ),
+          Lottie.asset('assets/anime.json', height: 200, width: 250),
           Text(
             "E-Commerce App",
             style: Theme.of(context)
                 .textTheme
                 .titleLarge
-                ?.copyWith(color: Colors.purple),
+                ?.copyWith(color: const Color.fromARGB(255, 227, 129, 245)),
           ),
-          const SizedBox(
-            height: 10,
-          ),
-          Lottie.asset('assets/anime.json', height: 300, width: 250),
         ],
       )),
     );
